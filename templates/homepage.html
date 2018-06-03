@@ -1,0 +1,129 @@
+<!DOCTYPE HTML> 
+
+<html lang="kn"><!-- !DOCTYPE HTML is an instruction to the web browser about what version of HTML the page is written in -->
+    <head>
+        {% include "homepage_dependencies.html" %}
+    </head>
+    <body>
+        <div id="wrapper">
+            {% include "navbar.html" %}
+            <div id="main_div">
+                <img id="main_image" src="{{ url_for('static', filename='images/manhattan5.jpg') }}"></img>
+                <div id="main_image_info" style="font-family: 'Anton', sans-serif; font-size:15px;"> New York City</div>
+            </div>
+            <div id="content">
+                <div id="vision_news">
+                    <div id="vision">
+                        <a href="https://wp.me/p6wPWy-1h">
+                            <div id="language"> 
+                                <img src="{{ url_for('static', filename='images/languages.jpg') }}"></img>
+                                <div id="vision_info"> Language </div>
+                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of Kannada</div>
+                            </div>
+                            <div id="art_and_culture"> 
+                                <img src="{{ url_for('static', filename='images/art.jpg') }}"></img>
+                                <div id="vision_info"> Art </div>
+                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of art </div>
+                            </div>
+                            <div id="cultural_heritage"> 
+                                <img src="{{ url_for('static', filename='images/culture.jpg') }}"></img>
+                                <div id="vision_info"> Culture </div>
+                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of culture</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="news">
+                        <div id="news_header">
+                            NEWS
+                        </div>
+                        {% for news_article in news_articles %} 
+                            <div class="news_article">
+                                <a href={{ news_article['url'] }} class="glyphicon glyphicon-circle-arrow-right"> </a>
+                                <div class ="news_article_title"><h4> {{ news_article['title'] }}</h4></div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="carousel">
+                    <div id="pintrest">
+                        <a id="pintrest_button" data-pin-do="buttonFollow" href="https://www.pinterest.com/kannadakootany/"> Follow KKNY on Pintrest </a>
+                    </div>
+                    <div id="populate_carousel">
+                        <a class="event">
+                            <img src="{{ url_for('static', filename='images/events/fathersday2.jpg') }}" alt="Picnic"></img>
+                            <button class="view_more_event_info btn btn-danger" role="button" onclick="location.href='https://www.eventbrite.com/e/kkny-overnight-fathers-day-camping-fun-adventure-father-child-tickets-46225645149'">
+			        View Event Information!
+			    </button>
+			    <div class="image_info"> KKNY Fathers Day Picnic </div>
+                            <div class="event_date"> Taking Place On 06/23/2018 - 06/24/2018 ! </div>
+                            <div class="image_info_hidden"> KKNY 2018 Fathers Day Picnic. </div>
+                        </a>
+                        <a class="event">
+                            <img src="{{ url_for('static', filename='images/events/picnic.jpg') }}" alt="Picnic"></img>		
+			    <button type="submit" class="view_more_event_info btn btn-danger" onclick="window.open('{{ url_for("static", filename="documents/KKNY_Annual_Picnic_Flyer.pdf") }}')">View Flyer!</button>
+
+			    <div class="image_info"> KKNY Annual Picnic </div>
+                            <div class="event_date"> Taking Place On 07/21/2018 ! </div>
+                            <div class="image_info_hidden"> The 2018 Annual Kannada Koota Picnic. </div>
+                        </a>
+                        <a class="event">
+                            <img src="{{ url_for('static', filename='images/events/gowri_ganesh.jpg') }}" alt="Ganesh Gowri Celebration"></img>
+                            <div class="image_info"> Ganesh Gowri Hubba  </div>
+                            <div class="event_date"> Taking Place on 09/22/2018 </div>
+                          <div class="image_info_hidden"> The celebration of the goddess Gowri.</div>
+                        </a>
+                        <a class="event">
+                            <img src="{{ url_for('static', filename='images/events/kannada_rajoystava.jpg') }}" alt="Kannada Rajoystava"></img>
+                            <div class="image_info"> Kannada Rajoystava  </div>
+                            <div class="event_date"> Taking Place On 11/03/2018 or 11/10/2018 </div>
+                            <div class="image_info_hidden"> The celebration of the day when all Kannada language speaking regions of South India were merged </div>
+                        </a>
+                        <a href = 'https://photos.app.goo.gl/YZOX1NX4TLWHBrO93' class="event">
+                            <img src="{{ url_for('static', filename='images/events/ugadi.jpg') }}" alt="Ugadi"></img>
+                            <div class="image_info"> Ugadi Festival  </div>
+                            <div class="image_info_hidden"> A New Years Festival celebrated by primarily South Indians </div>
+                        </a>
+                        <a class="event">
+                            <img src="{{ url_for('static', filename='images/events/code.jpg') }}" alt="Website Creation Sessions"></img>
+                            <div class="image_info"> Website Creation Session  </div>
+                            <div class="image_info_hidden"> Tutorials were given on how to build HTML, CSS webpages. Thanks to Badari, Gopal, Sheela, Naveen, Ravindra, Rohan, Krishna, Adithya. </div>
+                        </a>
+                        <a class="event" href='https://photos.app.goo.gl/FhYPknnUSNZurHKn1'>
+                            <img src="{{ url_for('static', filename='images/events/picnic2.jpg') }}" alt="Picnic"></img>
+                            <div class="image_info"> KKNY Picnic  </div>
+                            <div class="image_info_hidden"> The 2017 Annual Kannada Koota Picnic </div>
+                        </a>
+                        <a class="event" href='https://photos.app.goo.gl/SY2SUY2tHd1waLVH6'>
+                            <img src="{{ url_for('static', filename='images/events/ganesh.png') }}" alt="Ganesh"></img>
+                            <div class="image_info"> Ganesh Festival </div>
+                            <div class="image_info_hidden"> A celebration for Ganesh's birthday </div>
+                        </a>
+                        <a class="event" href='https://photos.app.goo.gl/aVHQorqVGTgDiBFd6'>
+                            <img src="{{ url_for('static', filename='images/events/mountain.jpg') }}" alt="Mountain"></img>
+                            <div class="image_info"> Bear Mountain </div>
+                            <div class="image_info_hidden"> A trip to Bear Mountain in 2015 </div>
+                        </a>
+                        <a class="event" href='https://photos.app.goo.gl/B8bwF4NafAGFp0AS2'>
+                            <img src="{{ url_for('static', filename='images/events/indianflag.jpg') }}" alt="Picnic"></img>
+                            <div class="image_info"> India Day Parade </div>
+                            <div class="image_info_hidden"> A day celebraing the day of India's independence</div>
+                        </a>
+                        <a class="event" href='https://photos.app.goo.gl/htweWhyun3dyeV6r2'>
+                            <img src="{{ url_for('static', filename='images/events/fathersday.jpg') }}" alt="Fathers Day"></img>
+                            <div class="image_info"> Father's Day Picnic </div>
+                            <div class="image_info_hidden"> A day where we celebrate all Fathers </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer">
+                {% include "footer.html" %}
+            </footer>
+        </div>
+        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+</html>

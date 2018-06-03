@@ -1,0 +1,91 @@
+<!DOCTYPE HTML> 
+<html lang="kn"><!-- !DOCTYPE HTML is an instruction to the web browser about what version of HTML the page is written in -->
+    <head>
+        {% include "about_us_dependencies.html" %}
+    </head>
+    <body>
+        <div id="wrapper">
+            {% include "navbar.html" %}
+            <div id="main_div">
+                <img id= "main_image" src="{{ url_for('static',filename='images/splash.jpg') }}"></img>
+                <div id= "about_image_header"> THE RELENTLESS PURSUIT OF <br>  DEVELOPING THE SPIRIT OF KANNADA </div>
+                <div id="about_image_info"> Our Message Is Simple: Kannada Nudi, Naadu and Nede, meaning, speak, and remember our land </div>
+            </div>
+            <div id="content">
+                <div id="about_us">
+                    <div class="about_us_image"> 
+                        <img src="{{ url_for('static', filename='images/krishna.gif') }}"></img>
+                        <div class="about_us_title">
+                            ART
+                        </div>
+                        <div class="about_us_description">
+                            Here at KKNY we believe in art development and growth
+                        </div>
+                    </div>
+                    <div class="about_us_image">
+                        <img src="{{ url_for('static', filename='images/books.gif') }}"></img>
+                        <div class="about_us_title">
+                            LANGUAGE
+                        </div>
+                        <div class="about_us_description">
+                            We believe in language maintenance
+                        </div>
+                    </div>
+                    <div class="about_us_image">
+                        <img src="{{ url_for('static', filename='images/holi.gif') }}"></img>
+                        <div class="about_us_title">
+                            CULTURE
+                        </div>
+                        <div class="about_us_description">
+                            We believe in cultural maintenance
+                        </div>
+                    </div>
+                    <div class="about_us_final_image">
+                        <img src="{{ url_for('static', filename='images/prayer.gif') }}"></img>
+                        <div class="about_us_title">
+                            DONATE
+                        </div>
+                        <div class="about_us_description">
+                           Help us advance the Kannda culture
+                        </div>
+                    </div>
+	    	    <form id="donate"  action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <!-- Identify your business so that you can collect the payments. -->
+                        <input type="hidden" name="business" value="donations@kkny.org">
+
+                        <!-- Specify a Donate button. -->
+                        <input type="hidden" name="cmd" value="_donations">
+
+                        <!-- Specify details about the contribution -->
+                        <input type="hidden" name="item_name" value="KKNY">
+                        <input type="hidden" name="item_number" value="Donate to our cultural organization">
+                        <input type="hidden" name="currency_code" value="USD">
+
+                        <!-- Display the payment button. -->
+                        <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate">
+                        <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+                    </form>
+                </div>
+               <div id="contact_us">
+                    <div id="contact_us_title">
+                        SUGGESTION BOX <br> You can send us a suggestion to our email box here
+                    </div>
+                    <div id="contact_us_form">
+                        <input type="text" id="name" name="name" size="25" placeholder="NAME">
+                        <input type="text" id="email" name="email" size="25" placeholder="EMAIL">
+                        <textarea id="suggestion" name="suggestion" cols="40" rows="6" placeholder="CONTENT"> </textarea>
+                        <input type="submit" id="contact_button">
+                        <div id="warning"> </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer">
+                {% include "footer.html" %}
+            </footer>
+        </div>
+    </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+</html>

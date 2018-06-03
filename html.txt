@@ -1,0 +1,16 @@
+The span tag is used to group inline-elements in a document. Because an element is inline it will render as a single unbroken text flow. Inline Elements are those which only occupy the space bounded by the tags defining the element, instead of breaking the flow of the content.
+
+Content - The content of the box, where text and images appear
+Padding - Clear an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area around the border. The margin is transparent
+
+The text-align property specifies the horizontal alignment of text in an element
+
+Position
+
+Relative
+Position relative is positioned relative to its normal position. Setting the top right bottom and left properties of a relatiely positioned element will cause it to be adjusted away from its normal position..
+
+Absolute
+Positioned relative to the nearest positioned ancestor. You can use left right top and bottom with position absolute. Any element that is position: absolute automatically has display: block.
