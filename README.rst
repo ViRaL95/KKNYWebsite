@@ -1,3 +1,7 @@
+ACCESS THE WEBSITE
+-------------------
+You can view the website at www.kkny.info
+
 There are several components to our website. The first are HTML files which provide the structure to our application. CSS allows for styling these HTML Files. Javascript is used to make any requests to the server side code. Javascript is also used to create the affect of animations. 
 
 HTML AND CSS
