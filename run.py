@@ -18,7 +18,9 @@ about.html is rendered.
 """
 @application.route("/about")
 def renderAboutUs():
-    return render_template('about.html');
+    committeeMembers = CommitteeMembers()
+    previous_committee = committeeMembers.retrievePreviousCommittee()
+    return render_template('about.html', previous_committee=previous_committee);
 
 """
 This method retrieves all members in our MongoDB Database. The module renderMembers in the DATABASE package retrieves all members in our different committees. These different committees are different collections in our MongoDB database.

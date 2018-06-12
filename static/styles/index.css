@@ -591,13 +591,48 @@ footer span{
     border-top-color: #1d4971;
     border-top-style: dotted;
 }
-#contact_us_title{
+.about_us_section_title{
     width:100%;
     height:25%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 28px;
     text-align: center;
     color: gray;
     font-size: 30px;
     position: absolute;
+}
+#origins_of_kkny{
+    border-top-color: #1d4971;
+    border-top-style: dotted;
+    height: 700px;
+    margin-top: 70px;
+    position: relative;
+}
+#origins_of_kkny button{
+    position: relative;
+    top: 100px;
+}
+.origins_paragraph{
+    font-family: 'Hind', sans-serif;
+    font-size: 1.2vw;
+    position: relative;
+    top: 90px;
+    font-weight: bold;
+}
+#kkny_emphasis{
+    position: relative;
+    top: 100px;
+    font-weight: bold;
+}
+#view_document_select{
+    position: relative;
+    top: 100px;
+    font-size: 20px;
+}
+#view_document_button{
+    position: relative;
+    top: 100px;
+    left: 40px;
 }
 #contact_us_form{
     position: absolute;
@@ -791,3 +826,92 @@ input[type=submit]{
     }
 }
 
+@media only screen and (min-width: 375px) and (max-width:550px){
+   .origins_paragraph{
+       font-size: 1.6vw;
+   }
+}
+
+@media only screen and (min-width: 550px) and (max-width:650px){
+   .origins_paragraph{
+       font-size: 1.5vw;
+   }
+}
+
+@media only screen and (min-width: 650px) and (max-width:750px){
+   .origins_paragraph{
+       font-size: 1.4vw;
+   }
+}
+
+@media only screen and (min-width: 750px) and (max-width:1050px){
+   .origins_paragraph{
+       font-size: 1.32vw;
+   }
+}
+
+@media only screen and (min-width: 1050px) and (max-width:1300px){
+   .origins_paragraph{
+       font-size: 1.2vw;
+   }
+}
+
+@media only screen and (min-width:1300px) and (max-width:1450px){
+   .origins_paragraph{
+       font-size: 1.15vw;
+   }
+}
+
+@media only screen and (min-width:1450px) and (max-width:1500px){
+   .origins_paragraph{
+       font-size: 1.10vw;
+   }
+}
+
+@media only screen and (min-width:1500px) and (max-width:1600px){
+   .origins_paragraph{
+       font-size: 1.05vw;
+   }
+}
+
+@media only screen and (min-width:1600px) and (max-width:1700px){
+   .origins_paragraph{
+       font-size: 1.00vw;
+   }
+}
+
+@media only screen and (min-width:1700px) and (max-width:1800px){
+   .origins_paragraph{
+       font-size: .95vw;
+   }
+}
+
+@media only screen and (min-width:1800px){
+   .origins_paragraph{
+       font-size: .90vw;
+   }
+}
+
+@media only screen and (min-width:1900px) and (max-width:2000px){
+   .origins_paragraph{
+       font-size: .85vw;
+   }
+}
+
+@media only screen and (min-width:2000px) and (max-width:2100px){
+   .origins_paragraph{
+       font-size: .80vw;
+   }
+}
+
+@media only screen and (min-width: 2100px) and (max-width: 2750px){
+   .origins_paragraph{
+       font-size: .75vw;
+   }
+}
+
+@media only screen and (min-width: 2750px){
+   .origins_paragraph{
+       font-size: .70vw;
+   }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML> 
-<html lang="kn"><!-- !DOCTYPE HTML is an instruction to the web browser about what version of HTML the page is written in -->
+<html lang="kn">
     <head>
         {% include "about_us_dependencies.html" %}
     </head>
@@ -65,9 +65,156 @@
                         <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate">
                         <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
                     </form>
-                </div>
+               </div>
+               <div class="event_carousel_header">
+                        Previous Events
+               </div>
+	       <div class="event_carousel_mini_header">
+		Click To View Photos
+	       </div>
+	       <div id="previous_events_carousel">
+		   <a href = 'https://photos.app.goo.gl/YZOX1NX4TLWHBrO93' class="event">
+			<img src="{{ url_for('static', filename='images/events/ugadi.jpg') }}" alt="Ugadi"></img>
+			<div class="image_info"> Ugadi Festival  </div>
+			<div class="image_info_hidden"> A New Years Festival celebrated by primarily South Indians </div>
+		    </a>
+		    <a class="event">
+			<img src="{{ url_for('static', filename='images/events/code.jpg') }}" alt="Website Creation Sessions"></img>
+			<div class="image_info"> Website Creation Session  </div>
+			<div class="image_info_hidden"> Tutorials were given on how to build HTML, CSS webpages. Thanks to Varun, Badari, Gopal, Sheela, Naveen, Ravindra, Rohan, Krishna, Adithya. </div>
+		    </a>
+		    <a class="event" href='https://photos.app.goo.gl/FhYPknnUSNZurHKn1'>
+			<img src="{{ url_for('static', filename='images/events/picnic2.jpg') }}" alt="Picnic"></img>
+			<div class="image_info"> KKNY Picnic  </div>
+			<div class="image_info_hidden"> The 2017 Annual Kannada Koota Picnic </div>
+		    </a>
+		    <a class="event" href='https://photos.app.goo.gl/SY2SUY2tHd1waLVH6'>
+			<img src="{{ url_for('static', filename='images/events/ganesh.png') }}" alt="Ganesh"></img>
+			<div class="image_info"> Ganesh Festival </div>
+			<div class="image_info_hidden"> A celebration for Ganesh's birthday </div>
+		    </a>
+		    <a class="event" href='https://photos.app.goo.gl/aVHQorqVGTgDiBFd6'>
+			<img src="{{ url_for('static', filename='images/events/mountain.jpg') }}" alt="Mountain"></img>
+			<div class="image_info"> Bear Mountain </div>
+			<div class="image_info_hidden"> A trip to Bear Mountain in 2015 </div>
+		    </a>
+		    <a class="event" href='https://photos.app.goo.gl/B8bwF4NafAGFp0AS2'>
+			<img src="{{ url_for('static', filename='images/events/indianflag.jpg') }}" alt="Picnic"></img>
+			<div style="color: black;" class="image_info"> India Day Parade </div>
+			<div class="image_info_hidden"> A day celebraing the day of India's independence</div>
+		    </a>
+		    <a class="event" href='https://photos.app.goo.gl/htweWhyun3dyeV6r2'>
+			<img src="{{ url_for('static', filename='images/events/fathersday.jpg') }}" alt="Fathers Day"></img>
+			<div class="image_info"> Father's Day Picnic </div>
+			<div class="image_info_hidden"> A day where we celebrate all Fathers </div>
+		    </a>
+	    </div>
+
+               <div id="origins_of_kkny">
+                    <div class="about_us_section_title">
+                        Origins of Kannada Koota New York Inc. <br> Learn About Our History 
+                    </div>
+                    <div id="english_origins_translation">
+			<p class="origins_paragraph"> KANNADA KOOTA NEW YORK INC., is a non profitable charitable organization established to promote the language, art, heritage and culture of people from Karnataka State in India. </p>
+
+			<p class="origins_paragraph"> Established in the year 1974, the organization is promoting the Kannada language, its heritage and work for the growth especially in the Tri State areas of New York, New Jersey and Connecticut. </p>
+
+			<p class="origins_paragraph"> The LBJ bill for Immigration Reform, following JF Kennedy paved the way for immigrants from all over the world in the mid sixties. Kannadigas were did not fall behind of the new opportunities and started to migrate. New York was their first choice and when they arrived started to settle down in communities of Lefrak City, Jackson Heights, Elmhurst, Flushing, Woodside, Jamaica, Forest Hills among other places within Queens. Early Kannadigas used to meet and greet in the Hindu Temple, housed in a dilapidated Church building as well as among friends houses as means to socialize within the small ethnic group that was. In the beginning of 1970, small music and kolata programs were held in India's Independence Day sponsored by the Joint Committee of Indian Associations, (now known as Federation of India - FIA). Few Kannadigas even went to request the Indian Consulate Office in Manhattan to suggest place where they can continue their cultural heritage. </p>
+
+			<p class="origins_paragraph"> Every Kannadiga was very much interested to celebrate the Gowri and Ganesh Pooja, a symbol of our Kannada heritage and lack of a Hindu Temple was bothering very much. At this time, Vasudeva Murthy and Dr. Bhagya Murthy, very enthusiast Kannadigas invited few of the friends for the Ganesh Pooja at his house in Lefrak City in 1971 that began the seed for present Kannada Koota. The news spread like wild fire, catching every Kannadiga in the Queens areas and around, mainly through word of mouth. Vasu & Bhagya were pleasantly surprised at the huge gathering, accommodated everyone in their small apartment at the Ganesh Pooja (1971) and finally this lead to a meeting to start organization of Kannadigas in the following weeks. A committee was formed to send out information seeking a survey of interests of Kannadigas and the overwhelming response of "yes", culminated forming Kannada Organization. The committee then named Kannada Koota New York to organize separately. In the initial stages, the Kannadigas were attending various functions similarly organized by Bharathi Society of America where programs were conducted in Tamil. Though Bharathi Society was disappointed at the start of the new organization, Kannadigas continued to persist in their plans to establish their own identity and organizational spirit. </p>
+
+			<p class="origins_paragraph"> Dr. Sreedevi Chandra Shekar and Dr. HK Chandra Shekar played a pivotal role as well as several kannadigas in start of the Kannada Koota New York, which found its root in 1972. On the Makara Sankranti day in 1972, the Kannada Koota was formed officially. In the year 1974, the name Kannada Koota New York Inc., was finally established with Articles of Association and obtained its Charitable Organization under 501(3) c in the year 1977. Dr. Sreedevi Chandra Shekar was the first President in 1972 and Vasudeva Murthy served as first Secretary in 1972. With efforts of dedicated Kannadigas including Dr. Vishwanath Banad, Mrs Satya Vishwanath, Dr. HKc's, Krishnamurthy Venkataraman, (late) Gururaj Sirsi & Usha Sirsi, Dr. Anusuya Nagaraj and AR Nagaraj, Nalini and Gopal Kukke, Sampath Kumaran, V Subramanyam, Satyanarayan, Nagu Srinivas, Bharathi & GV Chandrasekhar and many others, Kannada Koota found its firmer roots. If we have left any names of early founders, we do apologize for any inadvertence and lack of information but not our intention. We also take this opportunity in narrating the origins, a tribute to all those who paved pivotal role in early seventies. By the late 1973, the constitution was formed and formalized in 1974 as stated before, including formalization of elections, procedures, programs etc. Though we have elaborate election processes, mostly the elections were by nominations, peaceful accord and general approval than bitter elections. That also speaks for the peace loving nature of Kannadigas. It is the heritage that we want to keep as peace loving, encourage each Kannadiga no matter in what field and establish as an organization of repute, dignity and integrity. </p>
+
+			<p class="origins_paragraph"> From the 1980's many more developments have occurred in the past 30 years and in 2010, we standing behind a legacy of an organization that is 38 years old, hoping to achieve the objectives set by the founders as well as exploring new dimensions to support the Kannadigas in the New York area with specific emphasis on: </p>
+                       <ul id="kkny_emphasis">
+                           <li>
+			       Keeping Kannada as our means of communication at home, develop a community of strong Kannadigas, language development and growth
+                           </li>
+                           <li>
+			       Maintain our cultural heritage, encourage local and artists from Karnataka, our social links, art and culture
+                           </li>
+			   <li>
+			Keep our religious and festivals so that the culture is fully integrated with the new found land of America for Kannadigas.
+                           </li>
+                       </ul>
+                    </div>
+                    <div style="display: none" id="kannada_origins_translation">
+ 			<p class="origins_paragraph">  ಕನ್ನಡ ಕೂಟ ನ್ಯೂಯಾರ್ಕ್ - ಕರ್ನಾಟಕ ರಾಜ್ಯದಿಂದ ಬಂದ ಜನರ ಭಾಷೆ, ಕಲೆ, ಪರಂಪರೆ ಮತ್ತು ಸಂಸ್ಕೃತಿಯನ್ನು ಉತ್ತೇಜಿಸಲು ಸ್ಥಾಪಿತವಾದ ಒಂದು ಲಾಭ ರಹಿತ ಸಂಸ್ಥೆಯಾಗಿದೆ.   </p>
+			<p class="origins_paragraph">    ಇಸವಿ 1974 ರಲ್ಲಿ ಸ್ಥಾಪನೆಯಾದ ಈ ಸಂಸ್ಥೆಯು ನ್ಯೂಯಾರ್ಕ್, ನ್ಯೂಜೆರ್ಸಿ ಮತ್ತು ಕನೆಕ್ಟಿಕಟ್  ರಾಜ್ಯ ಪ್ರದೇಶಗಳಲ್ಲಿ ಕನ್ನಡ ಭಾಷೆ, ಅದರ ಪರಂಪರೆ ಮತ್ತು ಬೆಳವಣಿಗೆಗೆ ಉತ್ತೇಜನ ನೀಡುತ್ತಿದೆ.         </p>
+			<p class="origins_paragraph">    Lyndon B. Johnson ಬಿಲ್ ಸುಮಾರು ಅರವತ್ತರ ದಶಕದ ಮಧ್ಯಭಾಗದಲ್ಲಿ ಪ್ರಪಂಚದಾದ್ಯಂತದ ವಲಸೆಗಾರರಿಗೆ ದಾರಿ ಮಾಡಿಕೊಟ್ಟಿತು. ಕನ್ನಡಿಗರು ವಲಸೆ ಹೋಗಲು ಪ್ರಾರಂಭಿಸಿದರು. ನ್ಯೂ ಯಾರ್ಕ್ ಅವರ ಮೊದಲ ಆಯ್ಕೆಯಾಗಿತ್ತು ಮತ್ತು ಅವರು ಲೆಫ್ರಾಕ್ ಸಿಟಿ, ಜಾಕ್ಸನ್ ಹೈಟ್ಸ್, ಎಲ್ಮ್ಹರ್ಸ್ಟ್, ಫ್ಲಶಿಂಗ್, ವುಡ್ಸೈಡ್, ಜಮೈಕಾ, ಫಾರೆಸ್ಟ್ ಹಿಲ್ಸ್ ನೆರೆಹೊರೆ ಗಳಲ್ಲಿ ಮತ್ತು  ಕ್ವೀನ್ಸ್ನನ ಇತರ ಸ್ಥಳಗಳಲ್ಲಿ ನೆಲೆಸಲು ಪ್ರಾರಂಭಿಸಿ ದರು. ಮೊದಲು ಹಿಂದು ದೇವಸ್ಥಾನದಲ್ಲಿ ಭೇಟಿಯಾಗು ತಿದ್ದರು .         </p>
+		        <p class="origins_paragraph"> 
+
+ಪ್ರತಿ ಕನ್ನಡಿಗರಿಗೆ ನಮ್ಮ ಕನ್ನಡ ಪರಂಪರೆಯ ಸಂಕೇತ ವಾದ ಗೌರಿ ಮತ್ತು ಗಣೇಶ ಪೂಜೆಯನ್ನು ಆಚರಿಸಲು ಬಹಳ ಆಸಕ್ತಿ ಇತ್ತು. ಈ ಸಮಯದಲ್ಲಿ, ಬಹಳ ಉತ್ಸಾಹಿ ಕನ್ನಡಿಗ ರಾದ ವಾಸುದೇವ ಮೂರ್ತಿ ಮತ್ತು ಡಾ. ಭಾಗ್ಯ ಮೂರ್ತಿ ಯವರು  ಗಣೇಶ ಪೂಜೆಗೆ ಕೆಲವು ಸ್ನೇಹಿತರನ್ನು ಇಸವಿ 1971 ರಲ್ಲಿ ಲೆಫ್ರಾಕ್ ಸಿಟಿಯಲ್ಲಿ ರುವ ತಮ್ಮ ಮನೆ ಗೆ ಅಹವಾನಿಸುತ್ತಾರೆ. 
+
+
+                       </p>
+			<p class="origins_paragraph">
+
+ಡಾ. ಶ್ರೀದೇವಿ ಚಂದ್ರ ಶೇಖರ್ , ಡಾ.ಎಚ್.ಕೆ. ಚಂದ್ರ ಶೇಖರ್ ಮತ್ತು ಹಲವು ಕನ್ನಡಿಗರು ಇಸವಿ 1972 ರಲ್ಲಿ ಕನ್ನಡ ಕೂಟ ವನ್ನು ಸ್ಥಾಪಿಸಲು ಮುಖ್ಯ ಪಾತ್ರ ವಹಿಸಿದರು. 1972 ರಲ್ಲಿ ಮಕರ ಸಂಕ್ರಾಂತಿ ದಿನದಂದು ಕನ್ನಡ ಕೂಟ ಅಧಿಕೃತವಾಗಿ ರೂಪುಗೊಂಡಿತು. . 1974 ರ ವರ್ಷದಲ್ಲಿ, ಕನ್ನಡ ಕೂಟ ನ್ಯೂಯಾರ್ಕ್ ಇಂಕ್ ಎಂಬ ಹೆಸರು ಅಂತಿಮವಾಗಿ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿತು ಮತ್ತು ಅದರ ಚಾರಿಟಬಲ್ ಸಂಘಟನೆಯನ್ನು 1977 ರಲ್ಲಿ 501 (3) C ಅಡಿಯಲ್ಲಿ ನೋಂದಣಿ ಪಡಿಸಲಾಯಿತು. ಡಾ. ಶ್ರೀದೇವಿ ಚಂದ್ರ ಶೇಖರ್ 1972 ರಲ್ಲಿ ಮೊದಲ ಅಧ್ಯಕ್ಷರಾಗಿದ್ದರು.
+
+
+                        </p>
+
+			<p class="origins_paragraph">  
+ಕಳೆದ 40 ವರ್ಷಗಳಲ್ಲಿ ಹಲವು ಬೆಳವಣಿಗೆಗಳು ನಡೆದಿವೆ.  ಹಲವಾರು ಸ್ವಯಂಸೇವಕರು ಈ ಸಂಸ್ಥೆಗೆ ಶ್ರಮಿಸಿದ್ದಾರೆ  . ಸಂಸ್ಥಾಪಕರಿಂದ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟ ಉದ್ದೇಶಗಳನ್ನು ಸಾಧಿಸಲು ಮತ್ತು ಕನ್ನಡಿಗರನ್ನು ಬೆಂಬಲಿಸಲು ಈಗ 2018 ಇಸವಿಯಲ್ಲಿ  ಹೊಸ ಆಯಾಮಗಳನ್ನು ಅನ್ವೇಷಿಸುವ ಉದ್ದೇಶದಿಂದ ನಾವು ಹೊರಟಿರುತ್ತೆವೆ .
+
+
+                        </p>
+                        <ul id="kkny_emphasis">
+                           <li>
+			       ಮನೆಯಲ್ಲಿ ನಮ್ಮ ಸಂವಹನ ಸಾಧನವಾಗಿ ಕನ್ನಡವನ್ನು ಕೀಪಿಂಗ್, ಬಲವಾದ ಕನ್ನಡಿಗರು, ಭಾಷಾ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಬೆಳವಣಿಗೆಯ ಸಮುದಾಯವನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ
+                           </li>
+                           <li>
+                              ನಮ್ಮ ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ, ಕರ್ನಾಟಕದಿಂದ ಸ್ಥಳೀಯರು ಮತ್ತು ಕಲಾವಿದರನ್ನು ಪ್ರೋತ್ಸಾಹಿಸಿ, ನಮ್ಮ ಸಾಮಾಜಿಕ ಕೊಂಡಿಗಳು, ಕಲೆ ಮತ್ತು ಸಂಸ್ಕೃತಿ
+                           </li>
+			   <li>
+			      ನಮ್ಮ ಧಾರ್ಮಿಕ ಮತ್ತು ಉತ್ಸವಗಳನ್ನು ಇರಿಸಿಕೊಳ್ಳಿ ಇದರಿಂದ ಸಂಸ್ಕೃತಿಯು ಕಣ್ಣಡಿಗಸ್ಗಾಗಿ ಅಮೆರಿಕದ ಹೊಸ ಭೂಮಿಗೆ ಸಂಪೂರ್ಣವಾಗಿ ಸಮಗ್ರವಾಗಿದೆ.
+                           </li>
+                       </ul>                       
+                    </div>
+                       <button class="btn btn-danger" id="translate_origins_to_kannada"> Translate To Kannada </button>
+                       <button class="btn btn-danger" style="display: none" id="translate_origins_to_english"> Translate To English </button>
+               </div>
+               <div id="previous_committee_section">
+		   <div class="about_us_section_title">
+		       Previous Committee
+		   </div>
+		   <table class="tableContainer">
+			<thead>
+			    <th> Year            </th>
+			    <th> President       </th>
+			    <th> Vice President  </th>
+			    <th> Secretary       </th>
+			    <th> Treasurer       </th>
+			    <th> Joint Treasurer </th>
+			</thead>
+			<tbody>
+			{% for committee in previous_committee %}
+			    <tr>
+				<td> {{ committee['Year'] }}            </td>
+				<td> {{ committee['President'] }}       </td>
+				<td> {{ committee['Vice President'] }}  </td>
+				<td> {{ committee['Secretary'] }}       </td>
+				<td> {{ committee['Treasurer'] }}       </td>
+				<td> {{ committee['Joint Treasurer'] }} </td>
+			    </tr>
+			{% endfor %}
+			</tbody>
+		   </table>
+               </div>
+               <div id="document_box">
+                    <div class="about_us_section_title">
+                        DOCUMENT BOX <br> Select an important KKNY Document and hit Download!
+                    </div>
+                   <select id="view_document_select">
+                       <option selected value="CONSTITUTION"> Constitution </option>
+                       <option value="ELECTION_PROCESS"> Election Process </option>
+                       <option value="MEMBERSHIP_RECOMMENDATIONS"> Membership Recommendations </option>
+                   </select>
+                   <button class="btn btn-danger" id="view_document_button"> Download Document </button>
+               </div>
                <div id="contact_us">
-                    <div id="contact_us_title">
+                    <div class="about_us_section_title">
                         SUGGESTION BOX <br> You can send us a suggestion to our email box here
                     </div>
                     <div id="contact_us_form">
