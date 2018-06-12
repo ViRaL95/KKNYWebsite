@@ -51,6 +51,7 @@ class CommitteeMembers:
         sports_committee = self.database['sports_collection']
         return sports_committee.find({})
 
-    def retrieveWebCommittee(self):
-        web_committee = self.database['web_committee']
-        return web_committee.find({})
+    def retrievePreviousCommittee(self):
+        previous_committee = self.database['previous_committee']
+        return previous_committee.find({})
+

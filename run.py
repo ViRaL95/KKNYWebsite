@@ -38,21 +38,19 @@ def renderAllMembers():
     sound_music_committee = committeeMembers.retrieveSoundMusicCommittee()
     decorations_committee = committeeMembers.retrieveDecorationsCommittee()
     sports_committee = committeeMembers.retrieveSportsCommittee()
-    web_committee = committeeMembers.retrieveWebCommittee()
     return render_template("members.html", contacts=contacts, executive_committee=executive_committee, cultural_committee=cultural_committee, youth_committee=youth_committee, food_committee=food_committee, 
-                           fundraising_committee=fundraising_committee, sound_music_committee=sound_music_committee, decorations_committee=decorations_committee, sports_committee=sports_committee, 
-                           web_committee=web_committee)
+                           fundraising_committee=fundraising_committee, sound_music_committee=sound_music_committee, decorations_committee=decorations_committee, sports_committee=sports_committee)
 
+
+@application.route("/presidentsMessage")
+def renderPresidentsMessage():
+    return render_template('presidents_message.html')
 
 @application.route("/sendSuggestionToSuggestionsBox", methods=['POST'])
 def sendEmail():
     suggestion = request.get_json()
     emailKKNYInfo.email_kkny_account(suggestion)
     return "success"
-
-@application.route("/presidentsMessage")
-def renderPresidentsMessage():
-    return render_template('presidents_message.html')
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
