@@ -204,7 +204,7 @@ span.glyphicon.glyphicon-option-horizontal{
 }
 
 .view_more_event_info {
-    color: black;
+    color: white;
     font-weight: bold;
     position: absolute;
     bottom: 250px;
@@ -375,10 +375,40 @@ span.glyphicon.glyphicon-option-horizontal{
     padding-right: 100px;
 }
 
+#upcoming_events_carousel{
+    width: 930px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#previous_events_carousel{
+    width: 930px;
+    position: relative;
+    margin: 0 auto;
+}
+
 .carousel-inner>.item>img{
     width: 100%;
     height: 600px;
 }
+
+.event_carousel_header{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Anton', sans-serif;
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+
+.event_carousel_mini_header{
+    font-size: 23px; 
+    font-family: 'Anton', sans-serif;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 
 .tableContainer{
     max-height:400px;
@@ -407,6 +437,26 @@ span.glyphicon.glyphicon-option-horizontal{
 
 .slick-next:before{
     color: black;
+}
+
+.slick-slider .slick-list { 
+    opacity: 0; 
+    position: absolute; 
+}
+
+.slider{
+    display: none;
+}
+
+.slider.slick-initialized { display: block; }
+
+.slick-slider.slick-initialized {
+    background: none;
+}
+.slick-slider.slick-initialized .slick-list { 
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.2s ease-in;
 }
 
 footer{
@@ -492,6 +542,28 @@ footer span{
     height:750px;
     top: 40px;
     position: relative;
+}
+
+#previous_committee_section{
+   position: relative;
+   top: 100px;
+   height: 750px;
+   border-top-color: #1d4971;
+   border-top-style: dotted;
+}
+
+#previous_committee_section .tableContainer{
+  position: relative;
+  top: 70px;
+}
+
+#document_box{
+   position: relative;
+   top: 100px;
+   height: 300px;
+   text-align: center;
+   border-top-color: #1d4971;
+   border-top-style: dotted;
 }
 .about_us_image{
     position: relative;
