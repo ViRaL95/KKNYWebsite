@@ -52,5 +52,10 @@ def sendEmail():
     emailKKNYInfo.email_kkny_account(suggestion)
     return "success"
 
+@application.route("/sponsors")
+def renderSponsors():
+    return render_template('sponsors.html')
+
+
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
