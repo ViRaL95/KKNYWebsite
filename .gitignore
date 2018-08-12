@@ -1,3 +1,5 @@
 SECRETS
 wsgi.py
 KKNY_Website.ini
+*.pyc
+*.pyo
