@@ -34,3 +34,6 @@ run.py
 -------
 This file located in the root directory of the project is used to handle routing in our application. For example when a users goes to the '/members' URI a method renderAllMembers will retrieve all members of different committees in our database. If one would like to add an extra endpoint or URI Please edit this file.
 
+RUN THE WEBSITE LOCALLY
+------------------------
+uwsgi KKNY_Website.ini
