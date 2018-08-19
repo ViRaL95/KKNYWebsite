@@ -52,5 +52,12 @@ def sendEmail():
     emailKKNYInfo.email_kkny_account(suggestion)
     return "success"
 
+@application.route("/contact_us", methods=['GET'])
+def contact_us(): 
+    return render_template('contact_us_page.html')
+
+
+
+
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

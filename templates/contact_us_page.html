@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include "contact_us_dependencies.html" %}
+    </head>
+    <body>
+        <div id="wrapper">
+            {% include "navbar.html" %}
+	    <div id="main_div">
+                <img id="main_image" src="{{ url_for('static', filename='images/jog_falls.png') }}"></img>
+                <div id="main_image_info" style="font-family: 'Anton', sans-serif; font-size:15px;"> Jog Falls</div>
+            </div>
+            <div id="content">
+                <div id="kkny_address">
+                    KKNY Address <br> Kannada Koota New York C/O Nagesh Rao 9108 215th street Queens Village, NY 11428
+                </div>
+ 
+                <div id="contact_us">
+                   <div class="about_us_section_title">
+                        SUGGESTION BOX <br> You can send us a suggestion to our email box here
+                    </div>
+                    <div id="contact_us_form">
+                        <input type="text" id="name" name="name" size="20" placeholder="NAME">
+                        <input type="text" id="email" name="email" size="20" placeholder="EMAIL">
+                        <textarea id="suggestion" name="suggestion" cols="80" rows="6" placeholder="SUGGESTION"> </textarea>
+                        <input type="submit" id="contact_button">
+                        <div id="warning"> </div>
+                    </div>
+                </div> 
+                <div id="google_forms_sections">
+                    <div class="about_us_section_title">
+                         STAY IN TOUCH <br> Here are some ways of staying in the mix of things
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefhrMmZK7OFCPZmVST9FJIXcEo1PZ5gIwjVkaxPclNTebhXw/viewform" type="button" class="btn btn-danger"> Let KKNY Advertise You !</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ57-HjKNSKA0dmLJqKwOu5bvvUmNCWBXgq2Bmk05fxtEPYQ/viewform" type="button" class="btn btn-primary"> Join Our KKNY Email Collection Drive !</a>
+                </div>
+            </div>
+            <footer id="footer">
+                {% include "footer.html" %}
+            </footer>
+	</div>
+    </body>
+</html>
