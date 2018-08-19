@@ -593,6 +593,11 @@ footer span{
     font-size: 2vw;
 }
 
+#kkny_address{
+    text-align: center;
+    font-size: 18px;
+}
+
 #presidents_message_title{
     position: absolute;
     bottom: 1300px;
