@@ -20,9 +20,10 @@ class NewsConnection:
         self.api_key = secrets.API_KEY
         self.domain_name = secrets.DOMAIN_NAME
         self.version_no = secrets.VERSION_NO
-        self.newspaper = secrets.NEWSPAPER
+        self.country = secrets.COUNTRY
         self.url = secrets.URL
-        self.url = self.url.format(self.domain_name, self.version_no, self.newspaper, self.api_key)
+        self.page_size = secrets.PAGE_SIZE
+        self.url = self.url.format(self.domain_name, self.version_no, self.country, self.page_size, self.api_key)
    
     def retrieveNews(self):
         #A GET REQUEST PERFORMED IN ORDER TO RETRIEVE NEWS CONTENT. IF THE NEWSPAPER WOULD LIKE TO BE CHANGED PLEASE VIEW THE SECRETS MODULE IN THE SECRETS PACKAGE
