@@ -5,90 +5,105 @@
         {% include "homepage_dependencies.html" %}
     </head>
     <body>
-        <div id="wrapper">
-            {% include "navbar.html" %}
-            <div id="main_div">
-                <img id="main_image" src="{{ url_for('static', filename='images/manhattan5.jpg') }}"></img>
-                <div id="main_image_info" style="font-family: 'Anton', sans-serif; font-size:15px;"> New York City</div>
-            </div>
-            <div id="content">
-                <div id="vision_news">
-                    <div id="vision">
-                        <a href="https://wp.me/p6wPWy-1h">
-                            <div id="language"> 
-                                <img src="{{ url_for('static', filename='images/languages.jpg') }}"></img>
-                                <div id="vision_info"> Language </div>
-                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of Kannada</div>
-                            </div>
-                            <div id="art_and_culture"> 
-                                <img src="{{ url_for('static', filename='images/art.jpg') }}"></img>
-                                <div id="vision_info"> Art </div>
-                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of art </div>
-                            </div>
-                            <div id="cultural_heritage"> 
-                                <img src="{{ url_for('static', filename='images/culture.jpg') }}"></img>
-                                <div id="vision_info"> Culture </div>
-                                <div id="vision_info_hidden"> At KKNY we believe in the maintenance of culture</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="news">
-                        <div id="news_header">
-                            NEWS
+        {% if current_user.is_authenticated  %}
+            <meta id="users_first_name" data-name="{{current_user.first_name}}">
+        {% endif %}
+		   <div id="content">
+			{% include "navbar.html" %}
+			<div id="main_div">
+			   <img id="main_image" src="{{ url_for('static', filename='images/manhattan5.jpg') }}"></img>
+                           <div id="login_logout_signup">
+                               {% if current_user.is_authenticated %}
+                                   <button onclick="location.href='logout'" type="button" class="btn btn-warning" style="font-weight: bold; color: black">
+                                       <a class="glyphicon glyphicon-lock" style="color:black"></a> Logout
+                                   </button>
+                               {% else %}
+				   <button type="button" class="btn btn-warning" onclick="location.href='login_page'" style="font-weight: bold; color:black">
+				       <a class="glyphicon glyphicon-lock" style="color:black"></a> Login
+				   </button>
+				   <button type="button" class="btn btn-warning" onclick="location.href='sign_up_page'" style="font-weight: bold; color:black">
+				       <a class="glyphicon glyphicon-lock" style="color:black"></a> Sign Up
+				   </button>
+                               {% endif %} 
+                           </div>
+			   <div id="main_image_info" style="font-family: 'Anton', sans-serif; font-size:15px;"> New York City</div>
+			</div>
+                        <img src="{{ url_for('static', filename='images/kkny_logo.png') }}" style="position: relative; margin: 0 auto; display: block; top: 30px; margin-bottom: 40px;"> </img>
+			<div id="vision_news">
+			    <div id="vision">
+				<a href="https://wp.me/p6wPWy-1h">
+				    <div id="language"> 
+					<img src="{{ url_for('static', filename='images/languages.jpg') }}"></img>
+					<div id="vision_info"> Language </div>
+					<div id="vision_info_hidden"> At KKNY we believe in the maintenance of Kannada</div>
+				    </div>
+				    <div id="art_and_culture"> 
+					<img src="{{ url_for('static', filename='images/art.jpg') }}"></img>
+					<div id="vision_info"> Art </div>
+					<div id="vision_info_hidden"> At KKNY we believe in the maintenance of art </div>
+				    </div>
+				    <div id="cultural_heritage"> 
+					<img src="{{ url_for('static', filename='images/culture.jpg') }}"></img>
+					<div id="vision_info"> Culture </div>
+					<div id="vision_info_hidden"> At KKNY we believe in the maintenance of culture</div>
+				    </div>
+				</a>
+			    </div>
+			    <div id="news">
+				<div id="news_header">
+				    NEWS
+				</div>
+				{% for news_article in news_articles %} 
+				    <div class="news_article">
+					<a href={{ news_article['url'] }} class="glyphicon glyphicon-circle-arrow-right"> </a>
+					<div class ="news_article_title"><h4> {{ news_article['title'] }}</h4></div>
+				    </div>
+				{% endfor %}
+			    </div>
+			</div>
+			<div id="carousel">
+			    <div class="event_carousel_header">
+				Upcoming And Previous Events
+			    </div>
+			    <div id="upcoming_events_carousel">
+				 <a class="event">
+				    <img src="{{ url_for('static', filename='images/events/gowri_ganesh.jpg') }}" alt="Ganesh Gowri Celebration"></img>
+				    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Ganesha-2Page-5.pdf") }}')"> View Flyer </button>
+				    <div class="image_info"> Ganesh Gowri Hubba  </div>
+				    <div class="event_date"> Taking Place on 09/22/2018 </div>
+				  <div class="image_info_hidden"> The celebration of the goddess Gowri.</div>
+				</a>
+				<a class="event">
+				    <img src="{{ url_for('static', filename='images/events/kannada_rajoystava.jpg') }}" alt="Kannada Rajoystava"></img>
+                                    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Rajoystava_2018_Flyer.pdf") }}')"> View Flyer </button>
+				    <div class="image_info"> Kannada Rajoystava  </div>
+				    <div class="event_date"> Took Place On 11/10/2018 </div>
+				    <div class="image_info_hidden"> The celebration of the day when all Kannada language speaking regions of South India were merged </div>
+				</a>
+
+				<a class="event">
+				    <img src="{{ url_for('static', filename='images/events/fathersday2.jpg') }}" alt="Picnic"></img>
+				    <button class="view_more_event_info btn btn-primary" role="button" onclick="location.href='https://www.eventbrite.com/e/kkny-overnight-fathers-day-camping-fun-adventure-father-child-tickets-46225645149'">
+					View Event Information!
+				    </button>
+				    <div class="image_info"> KKNY Fathers Day Picnic </div>
+				    <div class="event_date"> Took Place On 06/23/2018 - 06/24/2018 ! </div>
+				    <div class="image_info_hidden"> KKNY 2018 Fathers Day Picnic. </div>
+				</a>
+				<a class="event">
+				    <img src="{{ url_for('static', filename='images/events/picnic.jpg') }}" alt="Picnic"></img>		
+				    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/KKNY_Annual_Picnic_Flyer.pdf") }}')">View Flyer!</button>
+				    <div class="image_info"> KKNY Annual Picnic </div>
+				    <div class="event_date"> Took Place On 07/21/2018 ! </div>
+				    <div class="image_info_hidden"> The 2018 Annual Kannada Koota Picnic. </div>
+				</a>
+			    </div>
                         </div>
-                        {% for news_article in news_articles %} 
-                            <div class="news_article">
-                                <a href={{ news_article['url'] }} class="glyphicon glyphicon-circle-arrow-right"> </a>
-                                <div class ="news_article_title"><h4> {{ news_article['title'] }}</h4></div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div id="carousel">
-		    <div class="event_carousel_header">
-                        Upcoming And Previous Events
-                    </div>
-		    <div id="upcoming_events_carousel">
-			 <a class="event">
-                            <img src="{{ url_for('static', filename='images/events/gowri_ganesh.jpg') }}" alt="Ganesh Gowri Celebration"></img>
-                            <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Ganesha-2Page-5.pdf") }}')"> View Flyer </button>
-                            <div class="image_info"> Ganesh Gowri Hubba  </div>
-                            <div class="event_date"> Taking Place on 09/22/2018 </div>
-                          <div class="image_info_hidden"> The celebration of the goddess Gowri.</div>
-                        </a>
-                        <a class="event">
-                            <img src="{{ url_for('static', filename='images/events/kannada_rajoystava.jpg') }}" alt="Kannada Rajoystava"></img>
-                            <div class="image_info"> Kannada Rajoystava  </div>
-                            <div class="event_date"> Taking Place On 11/03/2018 or 11/10/2018 </div>
-                            <div class="image_info_hidden"> The celebration of the day when all Kannada language speaking regions of South India were merged </div>
-                        </a>
-
-			<a class="event">
-                            <img src="{{ url_for('static', filename='images/events/fathersday2.jpg') }}" alt="Picnic"></img>
-                            <button class="view_more_event_info btn btn-primary" role="button" onclick="location.href='https://www.eventbrite.com/e/kkny-overnight-fathers-day-camping-fun-adventure-father-child-tickets-46225645149'">
-			        View Event Information!
-			    </button>
-			    <div class="image_info"> KKNY Fathers Day Picnic </div>
-                            <div class="event_date"> Took Place On 06/23/2018 - 06/24/2018 ! </div>
-                            <div class="image_info_hidden"> KKNY 2018 Fathers Day Picnic. </div>
-                        </a>
-                        <a class="event">
-                            <img src="{{ url_for('static', filename='images/events/picnic.jpg') }}" alt="Picnic"></img>		
-			    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/KKNY_Annual_Picnic_Flyer.pdf") }}')">View Flyer!</button>
-
-			    <div class="image_info"> KKNY Annual Picnic </div>
-                            <div class="event_date"> Took Place On 07/21/2018 ! </div>
-                            <div class="image_info_hidden"> The 2018 Annual Kannada Koota Picnic. </div>
-                        </a>
-
-
-                    </div>
-                </div>
-            </div>
-            <footer id="footer">
-                {% include "footer.html" %}
-            </footer>
-        </div>
+                   <div id="push"></div>
+           </div>
+	   <footer>
+	        {% include "footer.html" %}
+	   </footer>
     </body>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>

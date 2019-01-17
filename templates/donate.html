@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include "donations_dependencies.html" %}
+    </head>
+    <body>
+            {% include "navbar.html" %}
+            <div id="content">
+                <div id="donation">
+                    <div id="donation_title">
+                        Kodagu Donations
+                    </div>
+                    <img src="{{ url_for('static', filename='images/kodagu_floods.jpg') }}"></img>
+                    <div id="donation_info">
+                        <input id="user_input_amount" placeholder="Amount" type="text" name="Amount">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			    <input type="hidden" name="cmd" value="_donations">
+			    <input type="hidden" name="business" value="NJ4U33EEBW7WJ">
+			    <input type="hidden" name="lc" value="US">
+			    <input type="hidden" id="paypal_amount" name="amount" value="0.00">
+			    <input type="hidden" name="item_name" value="Kodagu Donation">
+			    <input type="hidden" name="item_number" value="kodogu_donations">
+			    <input type="hidden" name="no_note" value="1">
+			    <input type="hidden" name="no_shipping" value="1">
+			    <input type="hidden" name="rm" value="1">
+			    <input type="hidden" name="return" value="https://kkny.org">
+			    <input type="hidden" name="cancel_return" value="https://kkny.org">
+			    <input type="hidden" name="currency_code" value="USD">
+			    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
+			    <input type="image" src="{{ url_for('static', filename='images/kodagu_donate.png') }}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		        </form>
+                    </div>
+                    <div id="why_donate">
+                        Kodagu, a district in Karnataka, has been hit with raging rains and extreme low pressure. This has resulted in rainfall of up to 25.3 cm and has claimed 6 lives in the district. <br> </br> How to help? Enter an amount and click donate on the left.
+                    </div>
+               </div>
+                <div id="push"></div>
+            </div>           
+            <footer id="footer">
+                {% include "footer.html" %}
+            </footer>
+    </body>
+</html>

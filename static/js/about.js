@@ -14,9 +14,8 @@ $(document).ready(function(){
         $("#kannada_origins_translation").hide();
         $("#origins_of_kkny").css("height", "700px");
      })
-     $("#view_document_button").click(function (){
-       selected_document = $("#view_document_select").val();
-       console.log(selected_document);
+     $("#view_important_document_button").click(function (){
+       selected_document = $("#view_important_document_select").val();
        if (selected_document == "CONSTITUTION"){
            window.open('/static/documents/CONSTITUTION_OF_KKNY.pdf');
        }
@@ -26,10 +25,24 @@ $(document).ready(function(){
        else if (selected_document == "MEMBERSHIP_RECOMMENDATIONS"){
            window.open('static/documents/Membership-Recom.pdf');
        }
+      })
+      $("#view_contributions_document_button").click(function(){
+          selected_document = $("#view_contributions_document_select").val();
 
-
+       if (selected_document == "KODAGU_RELIEF_THANKING_LETTER"){
+           window.open('static/documents/Kodagu-Relief-Thanking-Letter.pdf');
+       }
+       else if (selected_document == "KODAGU_RELIEF_THANKING_LETTER_2"){
+           window.open('static/documents/Kodagu relief thanking email.docx');
+       }
+       else if(selected_document == "KODAGU_RELIEF_DONATION_AMOUNT"){
+           window.open('static/documents/Kodagu-Relief-Donation-Amount.pdf');
+       }
+       else if(selected_document == "KODAGU_RELIEF_DONATION_AMOUNT_2"){
+           window.open('static/documents/Kodagu-Relief-Donation-Amount.jpg');
+       }
+      })
      })
-})
 
 
 function make_request(email, name, content){

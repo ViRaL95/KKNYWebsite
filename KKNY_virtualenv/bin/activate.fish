@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/root/KKNY_Website/KKNY_virtualenv"
+set -gx VIRTUAL_ENV "/home/KKNY/KKNY_Website_Production_Environment/KKNY_virtualenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

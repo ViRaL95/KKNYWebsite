@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include "upload_pictures_dependencies.html" %}
+    </head>
+    <body>
+	<div id="content">
+	    {% include "navbar.html" %}
+	    <div id="main_div">
+		<img id="main_image" src="{{ url_for('static', filename='images/manhattan5.jpg') }}"></img>
+		<div id="main_image_info" style="font-family: 'Anton', sans-serif; font-size:15px;"> New York City</div>
+	    </div>
+	    <div id="send_pic">
+		<div id="uploaded_picture_title">
+		   
+		    Want your pictures included in the Kannada Koota Photo Gallery?
+		</div>
+		<div id="uploaded_picture_instructions">
+		   Here are some steps:
+		    <ol>
+			<li> Choose a Photo </li>
+			<li> Choose An Event That This Photo Is Associated With </li>
+			<li> Hit Upload Photo </li>
+		    </ol>
+		</div>
+                <form method="post" enctype="multipart/form-data" id="upload_pics_form">
+		    <input name="file[]" id="choose_upload_image" type="file" multiple accept="image/gif, image/jpeg, image/jpg, image/png">
+                </form>
+		<select id="choose_event">
+		    {% for event in events %}
+                        <option value="{{ event.event_name }}"> {{event.event_name}} </option>
+		    {% endfor %} 
+		</select>
+		<input type="text" id="upload_image_other_event_name"> </input>
+		<button id="upload_photo_type_button"  class="btn btn-primary"> Upload Photo </button>
+                <div class="loader"></div>
+	    </div>
+            <div id="push"></div>
+         </div>
+         <footer id="footer">
+             {% include "footer.html" %}
+         </footer>
+
+    </body>
+</html>

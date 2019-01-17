@@ -3,3 +3,6 @@ pymongo
 flask
 uwsgi
 requests
+boto
+flask-login
+flask-sqlalchemy

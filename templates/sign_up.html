@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include "sign_up_dependencies.html" %}
+    </head>
+    <body>
+	    <div id="content">
+		{% include "navbar.html" %}
+		<div id="sign_up">
+                    <img id="sign_up_picture" src="{{ url_for('static', filename='images/hampi.png') }}">
+                    <div id="sign_up_box">
+			<div id="sign_up_box_title">
+			    Signup to the KKNY Website
+			</div>
+			<label> First Name </label>
+			<input type="text" id="first_name_sign_up"> </input>
+			<label> Last Name </label>
+			<input type="text" id="last_name_sign_up"> </input>
+			<div id="male_or_female_signup">
+			    <input id="male_radio" type="radio" name="gender" value="male"> Male </input>
+			    <input id="female_radio" type="radio" name="gender" value="female"> Female </input>
+			</div>
+			<label> Email </label>
+			<input type="text" id="email_signup" name="email"> </input>
+			<label for="password"> Password </label>
+			<input type="password" id="password_signup" name="password"> </input>
+                        <label for="repeat_password"> Repeat Password </label>
+                        <input type="password" id="repeat_password_signup" name="repeat_password"> </input>
+			<button class="btn btn-primary" id="sign_up_button"> Sign Up! </button>
+                    </div>
+		</div>
+		<div id="why_sign_up">
+		   Why sign up? <a href="https://kannadakootany.wordpress.com/2018/09/19/why-sign-up-to-the-kannada-koota-new-york-website/"> Find out here...</a>
+		</div>
+                <div id="already_a_member">
+                    Already A Member? <a href="/login_page">  Login Here </a>
+                </div>
+                <div id="push"> </div>
+	    </div>
+	        <footer id="footer">
+		    {% include "footer.html" %}
+	        </footer>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include "login_dependencies.html" %}
+    </head>
+    <body>
+	    <div id="content">
+		{% include "navbar.html" %}
+		<div id="welcome_to_kkny">
+		    Here at Kannada Koota New York, we believe in spreading the message of Karnataka
+		</div>
+		<div id="welcome_in_kannada">
+		    ಸ್ವಾಗತ
+		</div>
+		<div id="login_box">
+		    <div id="login_box_title">
+			Login To KKNY Website
+		    </div>
+		    <label> Email </label>
+		    <input type="text" id="email_login" name="email"> </input>
+		    <label for "password"> Password </label>
+		    <input type="password" id="password_login" name="password"> </input>
+		    <button class="btn btn-primary" id="login_button"> Login </button>
+		    <div id="forgot_password"> Forgot Password </div>
+		</div>
+                <div id="not_a_kkny_user"> Not a member of the KKNY Website?  <a href="/sign_up_page" id="not_user_sign_up"> Sign Up Here </a> </div>
+                <div id="push"> </div>
+	    </div>
+	        <footer id="footer">
+		    {% include "footer.html" %}
+	        </footer>
+    </body>
+</html>

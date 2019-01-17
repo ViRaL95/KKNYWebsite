@@ -8,8 +8,22 @@
             {% include "navbar.html" %}
             <div id="main_div">
                 <img id= "main_image" src="{{ url_for('static',filename='images/splash.jpg') }}"></img>
+                <div id="login_logout_signup">
+		    {% if current_user.is_authenticated %}
+			<button onclick="location.href='logout'" type="button" class="btn btn-warning" style="font-weight: bold; color: black">
+			    <a class="glyphicon glyphicon-lock" style="color:black"></a> Logout
+			</button>
+		    {% else %}
+			<button type="button" class="btn btn-warning" onclick="location.href='login_page'" style="font-weight: bold; color:black">
+			    <a class="glyphicon glyphicon-lock" style="color:black"></a> Login
+			</button>
+			<button type="button" class="btn btn-warning" onclick="location.href='sign_up_page'" style="font-weight: bold; color:black">
+			    <a class="glyphicon glyphicon-lock" style="color:black"></a> Sign Up
+			</button>
+		    {% endif %}
+                </div>
                 <div id= "about_image_header"> THE RELENTLESS PURSUIT OF <br>  DEVELOPING THE SPIRIT OF KANNADA </div>
-                <div id="about_image_info"> Our Message Is Simple: Kannada Nudi, Naadu and Nede, meaning, speak, and remember our land </div>
+                <div id="about_image_info"> Our Message Is Simple: Kannada Nudi, Naadu and Nade, meaning, speak, and remember our land </div>
             </div>
             <div id="content">
                 <div id="about_us">
@@ -98,7 +112,7 @@
 			<div class="image_info"> Father's Day Picnic </div>
 			<div class="image_info_hidden"> A day where we celebrate all Fathers </div>
 		    </a>
-	    </div>
+	       </div>
 
                <div id="origins_of_kkny">
                     <div class="about_us_section_title">
@@ -170,17 +184,30 @@
 			</tbody>
 		   </table>
                </div>
-               <div id="document_box">
+               <div class="document_box">
                     <div class="about_us_section_title">
                         DOCUMENT BOX <br> Select an important KKNY Document and hit Download!
                     </div>
-                   <select id="view_document_select">
+                   <select id="view_important_document_select">
                        <option selected value="CONSTITUTION"> Constitution </option>
                        <option value="ELECTION_PROCESS"> Election Process </option>
                        <option value="MEMBERSHIP_RECOMMENDATIONS"> Membership Recommendations </option>
                    </select>
-                   <button class="btn btn-danger" id="view_document_button"> Download Document </button>
+                   <button class="btn btn-danger" id="view_important_document_button"> Download Document </button>
                </div>
+               <div class="document_box">
+                   <div class="about_us_section_title">
+                       CONTRIBUTIONS <br> Select a contribution made by KKNY!
+                   </div>
+                   <select id="view_contributions_document_select">
+                       <option selected value="KODAGU_RELIEF_THANKING_LETTER"> Kodagu Relief Thanking Letter </option>
+                       <option value="KODAGU_RELIEF_THANKING_LETTER_2"> Kodagu Relief Second Thanking Letter  </option>
+                       <option value="KODAGU_RELIEF_DONATION_AMOUNT"> Kodagu Relief Donation Amount </option>
+                       <option value="KODAGU_RELIEF_DONATION_AMOUNT_2"> Kodagu Relief Second Donation Amount </option> 
+                   </select>
+                   <button class="btn btn-danger" id="view_contributions_document_button" > Download Document </button>
+               </div>
+               <div id="push"></div>
             </div>
             <footer id="footer">
                 {% include "footer.html" %}

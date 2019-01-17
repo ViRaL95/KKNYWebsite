@@ -8,3 +8,4 @@ $(document).ready(function(){
         $(this).children(".en_translation").show("slow");
     })  
 })
+

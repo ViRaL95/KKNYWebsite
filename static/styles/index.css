@@ -1,8 +1,9 @@
-body{
-    height:100%;
-    max-width:100%;
+html, body{
+    height: 100%;
+    margin: 0;
     overflow-x: hidden;
     background: url(../images/background_repeat.png) repeat top left #fffffa;
+
 }
 hr{
     border: 0;
@@ -10,6 +11,23 @@ hr{
     margin-top: 0px;
     margin-bottom: 0px;
 }
+#welcome_to_kkny{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 95px;
+    font-style: italic;
+}
+#welcome_in_kannada{
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 95px;
+    font-size: 30px;
+    font-style: italic;
+}
+
 #control_panel{
     padding: 10px;
     display: -webkit-flex;
@@ -18,6 +36,18 @@ hr{
     height:80px;
     background-color: #eb1302;
 }
+#welcome_user{
+    position: absolute;
+    top: 10px;
+    height: 20px;
+}
+
+#login_logout_signup{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 #main_div{
     background-color: black;
     position:relative;
@@ -46,6 +76,9 @@ nav{
     font-family: 'Pathway Gothic One', sans-serif;
     font-weight: bold;
 }
+.dropdown-menu{
+    top: 50%;
+}
 .kn_translation{
     display: none;
 }
@@ -63,10 +96,6 @@ nav{
 #control_panel span:not(#logo){
     font-size:18px;
 
-}
-#wrapper{
-    min-height:100%;
-    position:relative;
 }
 #vision_news{
     display: flex;
@@ -568,7 +597,7 @@ footer span{
   top: 70px;
 }
 
-#document_box{
+.document_box{
    position: relative;
    top: 100px;
    height: 300px;
@@ -627,7 +656,7 @@ footer span{
 }
 #presidents_quote{
     position: absolute;
-    top: 620px;
+    top: 300px;
     left: 30px;
     right: 30px;
     font-size: 1.0vw;
@@ -638,14 +667,14 @@ footer span{
 }
 #presidents_name{
     position: absolute;
-    bottom: 235px;
+    bottom: 150px;
     width: 100%;
     text-align: center;
     font-size: 22px;
 }
 #presidents_info{
     position: absolute;
-    bottom: 210px;
+    bottom: 100px;
     text-align: center;
     font-size: 22px;
     width:100%;
@@ -663,6 +692,15 @@ footer span{
 #donate{
     position: absolute;
     bottom: 0px;
+}
+#why_donate{
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 50px;
+    font-size: 23px;
+    width: 350px;
+    position: relative;
+    left: 1030px;
+    bottom: 440px;
 }
 .footer_donate{
     position: relative;
@@ -715,12 +753,12 @@ footer span{
     top: 100px;
     font-weight: bold;
 }
-#view_document_select{
+#view_important_document_select, #view_contributions_document_select{
     position: relative;
     top: 100px;
     font-size: 20px;
 }
-#view_document_button{
+#view_contributions_document_button, #view_important_document_button{
     position: relative;
     top: 100px;
     left: 40px;
@@ -788,6 +826,37 @@ input[type=submit]{
     }
 }
 
+#donation{
+    position: relative;
+    height: 700px;
+}
+
+#donation img{
+    position: relative;
+    left: 200px;
+}
+
+#donation_title{
+    font-size: 45px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 50px;
+}
+
+#donation_info{
+    position: absolute;
+    left: 350px;
+    top: 450px;
+    height: 90px;
+    width: 220px;
+}
+
+#donation_info input{
+    height: 30px;
+    position: relative;
+    left: 200px;
+}
 
 @media (max-width: 900px){
     #control_panel span{
@@ -796,11 +865,270 @@ input[type=submit]{
 
 }
 
+#send_pic{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#uploaded_picture_title{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 22px;
+}
+
+#uploaded_image_other_event_name{
+    display: none;
+
+}
+
+#uploaded_picture_instructions{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#upload_image_other_event_name{
+    display: none;
+    height: 50px;
+}
+
+#choose_upload_image{
+    margin-bottom: 20px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 360px;
+    bottom: 50px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+#lightgallery{
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+    width: 1000px; 
+}
+
+#photo_gallery_event_name{
+    font-family: 'Pathway Gothic One';
+    font-size: 34px;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+#photo_gallery_events{
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    border: solid;
+}
+
+.photo_gallery_event{
+    font-family: 'Pathway Gothic One';
+    font-size: 18px;
+}
+
+#photo_gallery_events_title{
+    text-align: center;
+    position: relative;
+    top: 20px;
+    font-family: 'Pathway Gothic One';
+    font-size: 34px;
+}
+
+.lightgallery_link img{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#shiva{
+    width: 300px;
+    left: 30px;
+    height: 180px;
+    position: relative;
+}
+
+#karnataka_flag{
+    width: 300px;
+    position: absolute;
+    height: 180px;
+    right: 30px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 #pintrest{
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
+}
+
+#login_box{
+    height: 270px;
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    color: white;
+    top: 110px;
+    background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+}
+
+#login_box_title{
+    text-align: center;
+    font-family: 'Pathway Gothic One';
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#login_box label{
+    display: block;
+    position: relative;
+    left: 10px;
+}
+
+#login_box input {
+    position: relative;
+    color: black;
+    left: 20px;
+    width: 200px;
+    height: 35px;
+    padding: unset;
+}
+
+#login_button{
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    font-weight: bold;
+}
+
+#forgot_password{
+    position: relative;
+    left: 125px;
+    top: 10px;
+    font-weight: bold;
+    font-style: italic;
+    -webkit-transition: all .25s;
+}
+
+#forgot_password:hover{
+   -webkit-transform: translate(5px, 0);
+   text-decoration: underline;
+}
+
+#not_a_kkny_user{
+    font-family: 'Pathway Gothic One', sans-serif;
+    position: relative;
+    font-size: 25px;
+    top: 140px;
+    text-align: center;
+}
+
+#not_user_sign_up{
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#sign_up{
+    display: flex;
+    width: 935px;
+    background-color: black;
+    margin: 0 auto;
+    top: 100px;
+    position: relative;
+}
+
+#why_sign_up{
+    position: relative;
+    top: 115px;
+    text-align: center;
+    font-family: 'Pathway Gothic One';
+    font-size: 24px;
+}
+
+#already_a_member{
+    font-family: 'Pathway Gothic One';
+    font-size: 24px;
+    position: relative;
+    top: 120px;
+    text-align: center;
+}
+
+#already_a_member a{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#why_sign_up a{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#sign_up_picture{
+    width: 710px;
+    height: 440px;
+}
+
+#sign_up_box{
+    height: 440px;
+    position: relative;
+    color: white;
+    background: #eb1302;
+}
+
+#sign_up_box_title{
+    text-align: center;
+    font-family: 'Pathway Gothic One';
+    font-size: 25px;
+}
+
+#sign_up_box label{
+    display: block;
+    position: relative;
+    left: 10px;
+}
+
+#sign_up_box input[type="text"], input[type="password"]{
+    height: 30px;
+    width: 400px;
+    color: black;
+}
+
+#sign_up_button{
+    position: relative;
+    top: 10px;
+
+}
+
+#male_or_female_signup{
+    display: flex;
+}
+
+#male_or_female_signup input{
+    position: relative;
+    left: 70px;
+    width: 100px;
+    height: 20px;
+}
+
+#content{
+    min-height: 100%;
+    margin-bottom: -180px;
+}
+
+#push{
+    height: 180px;
 }
 
 
