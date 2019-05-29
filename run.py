@@ -104,14 +104,17 @@ def upload_pic_page():
 @application.route("/upload_pics/<string:event_name>", methods=['POST'])
 @login_required
 def upload_pics(event_name):
+    print("entered upload pictures page")
     previous_events = PreviousEvents()
     event_info = previous_events.retrieve_event_info(event_name=event_name)
     upload_to_s3 = Photo_Send_s3()
     list_of_files = request.files.getlist("file[]")
+    print("yahuhhh")
     return json.dumps(upload_to_s3.send_photo_to_s3(list_of_files, {'email': current_user.email}, event_info))
 
 @application.errorhandler(413)
 def request_entity_too_large(error):
+    print("too large")
     return json.dumps({"message": "Please try to restrict the total size of all images to be less than 25 MB"}), 413, {'ContentType': 'application/json'}
 
 @application.route("/login_page")

@@ -63,9 +63,38 @@
 			</div>
 			<div id="carousel">
 			    <div class="event_carousel_header">
-				Upcoming And Previous Events
+				Upcoming  Events
 			    </div>
 			    <div id="upcoming_events_carousel">
+                                 <a class="event">
+                                    <img src="{{ url_for('static', filename='images/events/ugadi.jpg') }}" alt="Ganesh Gowri Celebration"></img>
+                                    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Ugadi-2019-Flyer-2.pdf") }}')"> View Flyer </button>
+                                    <div class="image_info"> Ugadi Festival  </div>
+                                    <div class="event_date"> Taking Place on 05/04/2019 </div>
+                                    <div class="image_info_hidden"> New Years Celebration for the Kannada people </div>
+  				 </a>
+				<a class="event">
+				    <img src="{{ url_for('static', filename='images/events/picnic.jpg') }}" alt="Picnic"></img>		
+				    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Picnic-2019.pdf") }}')">View Flyer!</button>
+				    <div class="image_info"> KKNY Annual Picnic </div>
+				    <div class="event_date"> Taking Place On 07/13/2019 </div>
+				    <div class="image_info_hidden"> The 2019 Annual Kannada Koota Picnic. </div>
+				</a>
+				 <a class="event">
+				    <img src="{{ url_for('static', filename='images/events/gowri_ganesh.jpg') }}" alt="Ganesh Gowri Celebration"></img>
+				    <button type="submit" class="view_more_event_info btn btn-primary" onclick=""> View Flyer </button>
+				    <div class="image_info"> Ganesh Gowri Hubba  </div>
+				    <div class="event_date"> Taking Place on 09/14/2019 </div>
+				  <div class="image_info_hidden"> The celebration of the goddess Gowri.</div>
+				</a>
+				<a class="event">
+				    <img src="{{ url_for('static', filename='images/events/kannada_rajoystava.jpg') }}" alt="Kannada Rajoystava"></img>
+                                    <button type="submit" class="view_more_event_info btn btn-primary" onclick=""> View Flyer </button>
+				    <div class="image_info"> Kannada Rajoystava  </div>
+				    <div class="event_date"> Taking Place On 11/09/2019 </div>
+				    <div class="image_info_hidden"> The celebration of the day when all Kannada language speaking regions of South India were merged </div>
+				</a>
+				<!--
 				 <a class="event">
 				    <img src="{{ url_for('static', filename='images/events/gowri_ganesh.jpg') }}" alt="Ganesh Gowri Celebration"></img>
 				    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Ganesha-2Page-5.pdf") }}')"> View Flyer </button>
@@ -73,6 +102,8 @@
 				    <div class="event_date"> Taking Place on 09/22/2018 </div>
 				  <div class="image_info_hidden"> The celebration of the goddess Gowri.</div>
 				</a>
+				-->
+				<!--
 				<a class="event">
 				    <img src="{{ url_for('static', filename='images/events/kannada_rajoystava.jpg') }}" alt="Kannada Rajoystava"></img>
                                     <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/Rajoystava_2018_Flyer.pdf") }}')"> View Flyer </button>
@@ -80,7 +111,8 @@
 				    <div class="event_date"> Took Place On 11/10/2018 </div>
 				    <div class="image_info_hidden"> The celebration of the day when all Kannada language speaking regions of South India were merged </div>
 				</a>
-
+				-->
+                                <!--
 				<a class="event">
 				    <img src="{{ url_for('static', filename='images/events/fathersday2.jpg') }}" alt="Picnic"></img>
 				    <button class="view_more_event_info btn btn-primary" role="button" onclick="location.href='https://www.eventbrite.com/e/kkny-overnight-fathers-day-camping-fun-adventure-father-child-tickets-46225645149'">
@@ -90,6 +122,8 @@
 				    <div class="event_date"> Took Place On 06/23/2018 - 06/24/2018 ! </div>
 				    <div class="image_info_hidden"> KKNY 2018 Fathers Day Picnic. </div>
 				</a>
+				-->
+          			<!--
 				<a class="event">
 				    <img src="{{ url_for('static', filename='images/events/picnic.jpg') }}" alt="Picnic"></img>		
 				    <button type="submit" class="view_more_event_info btn btn-primary" onclick="window.open('{{ url_for("static", filename="documents/KKNY_Annual_Picnic_Flyer.pdf") }}')">View Flyer!</button>
@@ -97,6 +131,7 @@
 				    <div class="event_date"> Took Place On 07/21/2018 ! </div>
 				    <div class="image_info_hidden"> The 2018 Annual Kannada Koota Picnic. </div>
 				</a>
+                                -->
 			    </div>
                         </div>
                    <div id="push"></div>

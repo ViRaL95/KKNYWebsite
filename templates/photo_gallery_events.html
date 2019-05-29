@@ -19,7 +19,7 @@
                 <div id="photo_gallery_events">
                     {% for previous_event in previous_events %}
 		      <div class="photo_gallery_event">
-			<a href="{{ previous_event.flickr_url }}"> {{previous_event.event_name}} </a>
+			<a href="{{ previous_event.flickr_url }}" target="_blank"> {{previous_event.event_name}} </a>
 		      </div>
 		    {% endfor %}
                 </div>
