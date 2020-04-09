@@ -5,14 +5,12 @@ $(document).ready(function(){
         $("#translate_origins_to_english").show();
         $("#kannada_origins_translation").show();
         $("#english_origins_translation").hide();
-        $("#origins_of_kkny").css("height", "400px");
      })
     $("#translate_origins_to_english").click(function(){
         $("#translate_origins_to_english").hide();
         $("#translate_origins_to_kannada").show();
         $("#english_origins_translation").show();
         $("#kannada_origins_translation").hide();
-        $("#origins_of_kkny").css("height", "700px");
      })
      $("#view_important_document_button").click(function (){
        selected_document = $("#view_important_document_select").val();
@@ -25,6 +23,10 @@ $(document).ready(function(){
        else if (selected_document == "MEMBERSHIP_RECOMMENDATIONS"){
            window.open('static/documents/Membership-Recom.pdf');
        }
+       else if (selected_document == "GENERAL_BODY_PROCESS"){
+           window.open('static/documents/general_body_process.docx');
+       }
+
       })
       $("#view_contributions_document_button").click(function(){
           selected_document = $("#view_contributions_document_select").val();
@@ -41,9 +43,15 @@ $(document).ready(function(){
        else if(selected_document == "KODAGU_RELIEF_DONATION_AMOUNT_2"){
            window.open('static/documents/Kodagu-Relief-Donation-Amount.jpg');
        }
+       else if (selected_document == "SEVANJALI_THANKING_LETTER"){
+           window.open('static/documents/sevanjali_charitable_trust.jpeg');
+       }
       })
-     })
+     $("#corona_virus_audio_file_button").click(function(){
+         window.open('static/audio_files/corona.m4a');
 
+     })
+})
 
 function make_request(email, name, content){
     data = {
