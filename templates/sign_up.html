@@ -7,24 +7,23 @@
 	    <div id="content">
 		{% include "navbar.html" %}
 		<div id="sign_up">
-                    <img id="sign_up_picture" src="{{ url_for('static', filename='images/hampi.png') }}">
+		    <div id="sign_up_box_title">
+		        Signup to the KKNY Website
+		    </div>
                     <div id="sign_up_box">
-			<div id="sign_up_box_title">
-			    Signup to the KKNY Website
-			</div>
-			<label> First Name </label>
+			<label id="first_name_signup_label"> First Name </label>
 			<input type="text" id="first_name_sign_up"> </input>
-			<label> Last Name </label>
+			<label id="last_name_signup_label"> Last Name </label>
 			<input type="text" id="last_name_sign_up"> </input>
 			<div id="male_or_female_signup">
 			    <input id="male_radio" type="radio" name="gender" value="male"> Male </input>
 			    <input id="female_radio" type="radio" name="gender" value="female"> Female </input>
 			</div>
-			<label> Email </label>
+			<label id="email_signup_label"> Email </label>
 			<input type="text" id="email_signup" name="email"> </input>
-			<label for="password"> Password </label>
+			<label id="password_signup_label"> Password </label>
 			<input type="password" id="password_signup" name="password"> </input>
-                        <label for="repeat_password"> Repeat Password </label>
+                        <label id="repeat_password_label"> Repeat Password </label>
                         <input type="password" id="repeat_password_signup" name="repeat_password"> </input>
 			<button class="btn btn-primary" id="sign_up_button"> Sign Up! </button>
                     </div>

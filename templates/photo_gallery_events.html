@@ -4,9 +4,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <link rel="stylesheet" href="/static/styles/index.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/photo_gallery.css') }}">
 	<script src="{{ url_for('static',filename='js/navbar.js') }}"></script>
         <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     </head>
     <body>
         <div id="content">
@@ -14,8 +16,10 @@
                 <div id="photo_gallery_events_title">
 		    Photo Gallery Events
                 </div>
-                <img id="shiva" src="{{ url_for('static',filename='images/shiva.jpg') }}">
-                <img id="karnataka_flag" src="{{ url_for('static',filename='images/karnataka_flag.jpg') }}">
+                <div id="photo_gallery_images">
+                    <img id="shiva" src="{{ url_for('static',filename='images/shiva.jpg') }}">
+                    <img id="karnataka_flag" src="{{ url_for('static',filename='images/karnataka_flag.jpg') }}">
+                </div>
                 <div id="photo_gallery_events">
                     {% for previous_event in previous_events %}
 		      <div class="photo_gallery_event">

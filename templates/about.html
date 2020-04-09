@@ -192,6 +192,7 @@
                        <option selected value="CONSTITUTION"> Constitution </option>
                        <option value="ELECTION_PROCESS"> Election Process </option>
                        <option value="MEMBERSHIP_RECOMMENDATIONS"> Membership Recommendations </option>
+                       <option value="GENERAL_BODY_PROCESS"> General Body Process </option>
                    </select>
                    <button class="btn btn-danger" id="view_important_document_button"> Download Document </button>
                </div>
@@ -203,9 +204,43 @@
                        <option selected value="KODAGU_RELIEF_THANKING_LETTER"> Kodagu Relief Thanking Letter </option>
                        <option value="KODAGU_RELIEF_THANKING_LETTER_2"> Kodagu Relief Second Thanking Letter  </option>
                        <option value="KODAGU_RELIEF_DONATION_AMOUNT"> Kodagu Relief Donation Amount </option>
-                       <option value="KODAGU_RELIEF_DONATION_AMOUNT_2"> Kodagu Relief Second Donation Amount </option> 
+                       <option value="KODAGU_RELIEF_DONATION_AMOUNT_2"> Kodagu Relief Second Donation Amount </option>
+                       <option value="SEVANJALI_THANKING_LETTER"> Sevanjali Thanking Letter </option>
                    </select>
                    <button class="btn btn-danger" id="view_contributions_document_button" > Download Document </button>
+               </div>
+               <div id="sevanjali_foundation_box">
+                   <div class="about_us_section_title">
+                        CONTRIBUTION MADE TOWARDS SEVANJALI FOUNDATION FOR THE NORTHERN KARNATAKA FLOOD RELIEF <br> SEVANJALI FOUNDATION THANKING KKNY
+                   </div>
+                   <div id="about_us_image">
+                       <img src="{{ url_for('static', filename='images/sevanjali/savitha_aunty_sevanjali_charitable_trust.jpeg') }}" alt="Thanking Image 1"></img>
+                       <img src="{{ url_for('static', filename='images/sevanjali/savitha_aunty_sevanjali_charitable_trust_2.jpeg') }}" alt="Thanking Image 2"></img>
+		       <video width="320" height="240" controls>
+		           <source src="{{ url_for('static', filename='videos/sevanjali_thanking_video.mp4') }}" type="video/mp4">
+		       </video>
+		   </div>
+               </div>
+               <div id="corona_virus_awareness_box">
+                   <div class="about_us_section_title">
+                       KKNY IS COMMITTED TOWARDS SPREADING AWARENESS AROUND THE CORONA VIRUS <br> KKNY HOSTS COMMUNITY INFORMATION AND CONFERENCE CALL
+                   </div>
+                   <div id="about_us_image">
+                       <img src="{{ url_for('static', filename='images/corona.jpg') }}" alt="Corona Virus"></img>
+		   </div>
+		   <div id="corona_awareness_description">
+		       <p>
+		           As a community it is of utmost important that we bring awareness to the community on how to prevent Corona Virus from spreading. An informational session held by a panel of doctors and other medical professionals will be held on Sunday March 22 2020 from 2 - 3 PM. We will dive deep on preventative measures, how corona virus is spread and more.
+		       </p>
+		       <p>
+		           For more information on this informational session please click the following <a href="https://mailchi.mp/632cae46f576/covid19-community-information-conference-call-details-faqs-with-our-own-doctors"> link </a>
+			
+		       </p>
+                       <p>
+                           If you would like to listen to the full informational session. Please download the audio file here:
+                       </p>
+                       <button id="corona_virus_audio_file_button" class="btn btn-danger"> Download Audio File </button>
+		   </div>
                </div>
                <div id="push"></div>
             </div>
