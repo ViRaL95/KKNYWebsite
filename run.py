@@ -176,7 +176,11 @@ def signup():
     db.session.commit()
     login_user(user)
     return json.dumps({"user_signed_up": True})
-   
+  
+@application.route("/donate", methods=['GET'])
+def donate():
+    return render_template('donate.html')
+ 
 @application.route("/photo_gallery")
 def render_all_photo_events():
     if current_user.is_authenticated:
