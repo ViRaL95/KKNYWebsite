@@ -252,28 +252,6 @@ hr{
     left: 10px;
 }
 
-#donation_title{
-    font-size: 45px;
-    text-align: center;
-    width: 100%;
-    font-family: 'Pathway Gothic One', sans-serif;
-    margin-bottom: 20px;
-}
-
-#donation_info{
-    position: absolute;
-    top: 400px;
-    left: 382px;
-    height: 90px;
-    width: 220px;
-}
-
-#donation_info input{
-    height: 30px;
-    position: relative;
-    left: 200px;
-}
-
 #main_div:hover #main_image_info{
     opacity:1;
 }
@@ -618,6 +596,7 @@ span.glyphicon.glyphicon-option-horizontal{
 }
 
 .container{
+    text-align: center;
     margin-top: 150px;
     padding: 40px;
     width: 1200px;
@@ -918,25 +897,21 @@ footer span{
     height: 100px;
 
 }
-@media only screen and (min-width: 1400px){
-    #why_donate {
-        left: 1030px;
-        width: 440px;
-        bottom: 460px;
-    }
-}
 
-
-#why_donate{
+#why_donate_2{
     font-family: 'Pathway Gothic One', sans-serif;
     margin-bottom: 50px;
     font-size: 23px;
+    top: 50px;
+    text-align: center;
     position: relative;
+    background-color: white;
 }
 .footer_donate{
     position: relative;
     right: 20px;
 }
+
 #constitution span{
     color: white;
     font-weight: bold;
@@ -1114,13 +1089,79 @@ input[type=submit]{
     }
 }
 
+/* DONATE PAGE */
 #donation{
     position: relative;
     height: 700px;
 }
 
+#donors_so_far{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    margin-top: 300px;
+}
+
+#donors_list{
+    overflow: auto;
+    height: 400px;
+}
+
 #donation img{
     position: relative;
     left: 200px;
+    width: 650px;
+    height: 500px;
+}
+
+#donation_title{
+    font-size: 45px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 20px;
+}
+
+#donation_info{
+    position: absolute;
+    top: 340px;
+    left: 620px;
+    height: 90px;
+    width: 220px;
+}
+
+#donation_input_amount{
+    width: 187px;
+    height: 36px;
+}
+
+#donate_button{
+    width: 220px;
+}
+
+@media only screen and (min-width: 1400px){
+    #why_donate {
+        left: 1030px;
+        bottom: 460px;
+        left: 1030px;
+        width: 440px;
+        bottom: 460px;
+    }
+}
+
+#why_donate{
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 50px;
+    font-size: 23px;
+    width: 400px;
+    position: relative;
+}
+
+/* LOCAL HEROES */
+#local_hero_images img{
+    height: 300px;
+    width: 300px;
+    padding: 5px;
 }
 

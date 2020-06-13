@@ -1,3 +1,6 @@
+from datetime import datetime
+import requests
+from pprint import pprint
 from API.newsConnection import NewsConnection
 from EMAIL import emailKKNYInfo
 from DATABASE.retrieve_event_for_photo_gallery import PreviousEvents 
@@ -8,6 +11,7 @@ import json
 import os
 import uuid
 import hashlib
+from donors.paypal_donations import retrieve_donors
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_sqlalchemy import SQLAlchemy
@@ -68,6 +72,11 @@ def renderAllMembers():
     sports_committee = committeeMembers.retrieveSportsCommittee()
     return render_template("members.html", contacts=contacts, executive_committee=executive_committee, cultural_committee=cultural_committee, youth_committee=youth_committee, food_committee=food_committee, 
                            fundraising_committee=fundraising_committee, sound_music_committee=sound_music_committee, decorations_committee=decorations_committee, sports_committee=sports_committee)
+
+
+@application.route('/localHeroes')
+def render_local_heros():
+    return render_template('local_heroes.html')
 
 
 @application.route("/presidentsMessage")
@@ -176,11 +185,45 @@ def signup():
     db.session.commit()
     login_user(user)
     return json.dumps({"user_signed_up": True})
+
+@application.route('/zoom_events', methods=['GET'])
+def render_zoom_events():
+    return render_template('zoom_events.html') 
   
 @application.route("/donate", methods=['GET'])
 def donate():
-    return render_template('donate.html')
- 
+    donors = retrieve_donors()
+    """
+    authorization_request = \
+        requests.post("https://api.paypal.com/v1/oauth2/token", headers={"Accept": "application/json",
+                                                                        "Accept-Language": "en_US"},
+                     auth=("AZTjzrpOI3kszOnGUgX4jQVEF5qfaSbCXUERBsGMFT_QMn88ILsKTMLrmiH-d9dytpMtTPj0jOBl_ilS",
+                           "EFMJ9CNMPVSpGgeSDmU2FZlRNmum2fG9afp9KdDKe1Peqwkcmz7c9_OU-h3zZD9wP0vDij_p4fHQgZ7S"),
+                     data={"grant_type": "client_credentials"})
+
+    token = authorization_request.json()['access_token']
+    ia_header = {"Authorization": "Bearer {}".format(token), "Content-Type": "application/json"}
+
+    start_date = datetime(2020, 5, 17)
+    current_date  = datetime.now().date()
+    start_date_str = datetime.strftime(start_date, '%Y-%m-%dT%H:%M:%SZ')
+    current_date_str = datetime.strftime(current_date, '%Y-%m-%dT%H:%M:%SZ')
+
+    answer = requests.get("https://api.paypal.com/v1/reporting/transactions", headers=ia_header,
+                          params={"start_date": start_date_str, "end_date": current_date_str,
+                                  "transaction_type": "T0013",
+                                  "fields": "payer_info"})
+
+    payment_info = {payer['payer_info']['payer_name']['alternate_full_name']: payer['transaction_info']['transaction_amount']['value']
+                    for payer in answer.json()['transaction_details']}
+
+
+    payment_info_sorted = []
+    for user, amount in sorted(payment_info.items(), key=lambda item: float(item[1]), reverse=True):
+        payment_info_sorted.append(user)
+    """
+    return render_template('donate.html', donors=donors)
+
 @application.route("/photo_gallery")
 def render_all_photo_events():
     if current_user.is_authenticated:

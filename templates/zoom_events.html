@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/static/styles/index.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/photo_gallery.css') }}">
+	<script src="{{ url_for('static',filename='js/navbar.js') }}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            {% include "navbar.html" %}
+                <div id="photo_gallery_events_title">
+		    Zoom events
+                </div>
+		<div>
+			<table class="table table-responsive" style="margin-top: 50px">
+			    <tbody>
+				<tr>
+				    <th> Date / Time </th>
+				    <th> Topic </th>
+				    <th> WebId </th>
+				    <th> Password </th>
+				    <th> Zoom URL </th>
+				</tr>
+				<tr>
+				    <td> Mondays 6:00 PM </td>
+				    <td> Get in shape from home </td>
+				    <td> 879 9654 6123 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/87996546123?pwd=U21DWmFpcC9VYWtVeE5uc2VGS2RvUT09 </td>
+				</tr>
+				<tr>
+				    <td> Thursday 8:30 PM  </td>
+				    <td> Katha Sourabha </td>
+				    <td> 817 3074 8867 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/81730748867?pwd=bThVRk5mRHFZUmh0NVk3cWpvTmRXUT09 </td>
+				</tr>
+				<tr>
+				    <td> Friday 8:00 PM </td>
+				    <td> Banni Nagona </td>
+				    <td> 852 4600 6636 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/85246006636?pwd=ZEZieFoyNHlGL2tUaEdFOE9kak9QZz09 </td>
+				</tr>
+				<tr>
+				    <td> Saturdays 12:00 PM  </td>
+				    <td> Adige Aramane </td>
+				    <td> 848 7398 2571 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/84873982571?pwd=NVQvWCtRM1dKRGVwUDZMUTVhem5pZz09 </td>
+				</tr>
+				<tr>
+				    <td> Saturday 6:00 PM  </td>
+				    <td> Xpress Yourself </td>
+				    <td> 952-932-332 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/952932332?pwd=ZXpSV2pZMCtleWJib09QTThISWtIZz09 </td>
+				</tr>
+				<tr>
+				    <td> Saturdays 8:00 PM </td>
+				    <td> Karaoke</td>
+				    <td> 847 8659 6156 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/84786596156?pwd=dXBCMGxBR1BsZkZTZjg1RUZSb1ZDQT09 </td>
+				</tr>
+				<tr>
+				    <td> Sundays 3:00 PM </td>
+				    <td> Virtual Music Festival </td>
+				    <td> 880 7854 2485 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/88078542485?pwd=ck9Fb3hnQ3k1dHBRdjZJbTl4dDJJQT09 </td>
+				</tr>
+				<tr>
+				    <td> Sundays 6:00 PM </td>
+				    <td> Bajan/Meditation/Bhagavat Gita </td>
+				    <td> 820 1671 6790 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/82016716790?pwd=NVZZdU1nYktsSld3dng1RFhWcWliUT09 </td>
+				</tr> 
+			       <tr>
+				    <td> Sunday 9:00 AM </td>
+				    <td> Yoga </td>
+				    <td> 897 4629 9138 </td>
+				    <td> 123456 </td>
+				    <td> https://us02web.zoom.us/j/89746299138?pwd=enhEOFVhUWxoTi9DT0h5WndMM2lKZz09 </td>
+				</tr>
+			    </tbody>
+			</table>
+		</div>
+                    {% for previous_event in previous_events %}
+                      <div class="photo_gallery_event">
+                        <a href="{{ previous_event.flickr_url }}" target="_blank"> {{previous_event.event_name}} </a>
+                      </div>
+                    {% endfor %}
+		<div id="donate description">
+		    
+		</div>
+                <div id="youtube_link" style="font-family: 'Pathway gothic One';font-size: 23px;text-align: center; font-weight: bold; top: 20px; position: relative">
+                    KKNY is now on YouTube! Click <a href="https://www.youtube.com/channel/UCWj7v3qVe4Fxx2oSjTsO4kg"> here </a> to watch and subscribe to every new KKNY video. 
+                </div>
+
+
+		<div id="why_donate_2">	
+			Please thank the local and guest artistis who have put their time and effort into making all of thesee events possible by donating here <a href="/donate"> here </a>
+                </div>
+
+	        <div id="push"></div>
+        </div>
+        <footer id="footer">
+            {% include "footer.html" %}
+        </footer>
+     </body>
+</html>        

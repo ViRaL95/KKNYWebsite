@@ -12,11 +12,8 @@
 			{% include "navbar.html" %}
 			<div id="main_div">
 			   <img id="main_image" src="{{ url_for('static', filename='images/manhattan5.jpg') }}"></img>
-			   <!--
-                           <button type="button" onclick="location.href='donate'" id="donate_to_charity"> <span style="position: relative; left: 10px;"> Donate To Northern Karnataka! </span>
-				<span class="glyphicon glyphicon-globe" style="position:relative; right:220px"> </span>
+                           <button type="button" onclick="location.href='zoom_events'" id="donate_to_charity"> <span style="position: relative"> View Schedule for Upcoming Zoom Events </span>
                            </button>
-			   -->
                            <div id="login_logout_signup">
                                {% if current_user.is_authenticated %}
                                    <button onclick="location.href='logout'" type="button" class="btn btn-warning" style="font-weight: bold; color: black">

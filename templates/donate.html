@@ -1,25 +1,32 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        {% include "donations_dependencies.html" %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}"> </link>
+	<script src="{{ url_for('static',filename='js/navbar.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/donations.js') }}"></script>
     </head>
     <body>
             {% include "navbar.html" %}
             <div id="content">
                 <div id="donation">
                     <div id="donation_title">
-                         Northern Karnataka Donations
+                         Support Kannada Local Talent
                     </div>
-                    <img src="{{ url_for('static', filename='images/Northern_Karnataka_Flood.jpg') }}" style="width:650px; height:500px"></img>
+                    <img src="{{ url_for('static', filename='images/karnataka_flag.jpg') }}" style="width:650px; height:500px"></img>
                     <div id="donation_info">
-                        <input id="user_input_amount" placeholder="Amount" type="text" name="Amount">
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input id="donation_input_amount" placeholder="Amount" type="text" name="Amount">
+                        <form  action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 			    <input type="hidden" name="cmd" value="_donations">
 			    <input type="hidden" name="business" value="NJ4U33EEBW7WJ">
 			    <input type="hidden" name="lc" value="US">
 			    <input type="hidden" id="paypal_amount" name="amount" value="0.00">
-			    <input type="hidden" name="item_name" value="Northern Karnataka Donations">
-			    <input type="hidden" name="item_number" value="northern_karnataka_donations">
+			    <input type="hidden" name="item_name" value="Zoom Participants">
+			    <input type="hidden" name="item_number" value="zoom_participants">
 			    <input type="hidden" name="no_note" value="1">
 			    <input type="hidden" name="no_shipping" value="1">
 			    <input type="hidden" name="rm" value="1">
@@ -27,14 +34,36 @@
 			    <input type="hidden" name="cancel_return" value="https://kkny.org">
 			    <input type="hidden" name="currency_code" value="USD">
 			    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
-			    <input type="image" src="{{ url_for('static', filename='images/donate_button.png') }}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			    <input type="image" id="donate_button" src="{{ url_for('static', filename='images/donate_button.png') }}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 			    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 		        </form>
                     </div>
                     <div id="why_donate">
-			More than 15 districts and as many as 237 villages have been affected due to this flood. The death toll is increasing rapidly and we need your help. For all donations received Kannada Koota will give all of it to the Shakthi Kendra Trust foundation towards helping victims who are affected by the flood. Please help out by donating, every dollar counts!
+		        With children and adults encouraged to stay inside and practice social distancing it is easy for the Kannada community to stop events all together. However the Kannada spirit prevails! Yoga, karaoke, Bhagavat Gita and other sessions are being conducted virtually through Zoom.
+
+			<br><br> 
+
+			Please thank the local and guest artists who have put their time and effort into making all of these events possible by donating
+			
+			<br><br>
+
+			If interested in the upcoming zoom events please click <a href="https://www.kkny.org/zoom_events"> here  </a>
                     </div>
                </div>
+		<div id="donors_so_far">
+		    Donors
+		</div>
+		<div style="overflow: auto; height: 400px">
+			<table id ="donaters" style="text-align: center" class="table table-responsive">
+			    <tbody>
+				{% for donor in donors %}
+				    <tr>
+					<td> {{donor}} </td>
+				    </tr>
+				{% endfor %}
+			   </tbody>
+			</table>
+		</div>
                 <div id="push"></div>
             </div>           
             <footer id="footer">
