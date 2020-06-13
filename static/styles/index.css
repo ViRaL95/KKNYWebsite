@@ -1100,7 +1100,6 @@ input[type=submit]{
     font-size: 32px;
     text-align: center;
     position: relative;
-    margin-top: 300px;
 }
 
 #donors_list{
@@ -1150,6 +1149,13 @@ input[type=submit]{
     }
 }
 
+@media only screen and (max-width: 1400px){
+    #donors_so_far{
+        margin-top: 300px;
+    }
+}
+
+
 #why_donate{
     font-family: 'Pathway Gothic One', sans-serif;
     margin-bottom: 50px;
@@ -1165,3 +1171,20 @@ input[type=submit]{
     padding: 5px;
 }
 
+#local_heroes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.local_hero{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#local_heroes_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    padding-top: 20px;
+}
