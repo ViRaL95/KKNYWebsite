@@ -8,11 +8,21 @@
     <div id="wrapper">
         {% include "navbar.html" %}
         <div id="content">
-            <div id="local_heroes_title">
-                Local Heroes
+	    <div id='local_heroes_title'>
+	        Kannada Koota Community Heroes
+	    </div>
+	    <div id='local_heroes_description'>
+During the ongoing COVID-19 pandemic, several members of the Kannada Koota community have been in the frontline often at risk to their own health and safety. We thank them from the bottom of our hearts and express our gratitude for their courage and dedication.
             </div>
    	    <div class="container" id="local_hero_images" style="text-align: center">
-		<div id="local_heroes">
+		<div id='local_heroes_subsection_title'>
+		    Kannada Koota Frontline Heroes
+		</div>
+		<div id='local_heroes_subsection_description'>
+		    We would like to thank these frontline heroes for putting their lives at risk to help serve the community during this Corona Virus Epidemic.
+		</div>
+
+	        <div class="local_heroes">
 		    <div class="local_hero">
 			<img src="{{ url_for('static', filename='images/local_heroes/Aditi Jayadeva Square.jpg' ) }}">
 			<div class="local_hero_name">
@@ -74,7 +84,7 @@
 			    Dr. Sunil Chikmagalur
 			</div>
 			<div class="local_hero_description">
-			   Pediatric Resident at Children's Hospital at Montefiore
+			   Pediatric Resident
 			</div>
 		    </div>
 		    <div class="local_hero">
@@ -110,7 +120,7 @@
 			    Ravi Chikmagalur
 			</div>
 			<div class="local_hero_description">
-			   Facility Manager, Forensic Investigations Division, NYPD
+			   Facility Manager, <br> Forensic Investigations Division, NYPD
 			</div>
 		    </div>
 		    <div class="local_hero">
@@ -242,16 +252,7 @@
 			</div>
 		    </div>
 		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
-			<div class="local_hero_name">
-			    Dr Nagaraja Rao Dharmavaram
-			</div>
-			<div class="local_hero_description">
-			    Internal Medicine Specialist
-			</div>
-		    </div> 
-		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/Nakul Rao.jpg') }}">
+			<img src="{{ url_for('static', filename='images/local_heroes/nakul_rao_squared.jpg') }}">
 			<div class="local_hero_name">
 			    Nakul Rao
 			</div>
@@ -260,7 +261,7 @@
 			</div>
 		    </div>
 		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
+			<img src="{{ url_for('static', filename='images/local_heroes/Dr Vaijinath Chakote squared.jpg') }}">
 			<div class="local_hero_name">
 			    Dr Vaijinath Chakote
 			</div>
@@ -269,7 +270,7 @@
 			</div>
 		    </div>
 		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
+			<img src="{{ url_for('static', filename='images/local_heroes/Dayanand Huded squared.jpg') }}">
 			<div class="local_hero_name">
 			    Dr. Dayanand V. Huded
 			</div>
@@ -277,16 +278,16 @@
 			</div>
 		    </div>
 		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
+			<img src="{{ url_for('static', filename='images/local_heroes/Dr. Venkatesh Sasthakonar Squared.jpg') }}">
 			<div class="local_hero_name">
 			    Venkatesh Sasthakonar
 			</div>
 			<div class="local_hero_description">
-			    Vice Chairman of Department of <br> Bariatric Surgery at Nassau University Medical Center
+			    Director of Bariatric Surgery at <br> Nassau University Medical Center
 			</div>
 		    </div>
 		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/woman_placeholder.png') }}">
+			<img src="{{ url_for('static', filename='images/local_heroes/Dr VILMA SHALINI VAS MD  Squared.jpg') }}">
 			<div class="local_hero_name">
 			    Vilma Shalini Vas MD. 
 			</div>
@@ -294,6 +295,33 @@
 			    Faculty, Dept of Internal Medicine <br> Nassau University Medical Center  
 			</div>
 		    </div>
+		    <div class="local_hero">
+			<img src="{{ url_for('static', filename='images/local_heroes/vishruth_girish.jpg') }}">
+			<div class="local_hero_name">
+			    Vishruth Girish
+			</div>
+			<div class="local_hero_description">
+			   Research-Scientist, Cold Spring Harbor Laboratories 
+			</div>
+		    </div>
+		    <div class="local_hero">
+			<img src="{{ url_for('static', filename='images/local_heroes/woman_placeholder.png') }}">
+			<div class="local_hero_name">
+			    Dr. Sowmya Reddy
+			</div>
+			<div class="local_hero_description">
+			    Psychiatry and Forensic Psychiatry  Specialist 
+			</div>
+		    </div>
+                </div>
+                <div id='local_heroes_subsection_title'>
+                    Kannada Koota Non-Frontline Heroes
+                </div>
+                <div id='local_heroes_subsection_description'>
+                    These members of the community put their time under the shutdown to productive use by delivering food to hospitals and care facilities, ensuring COVID affected patients are cared for, be it delivering grocery, food, assistance in visiting the doctor etc
+                </div>
+
+ 		<div class="non_frontline_heroes">
 		    <div class="local_hero">
 			<img src="{{ url_for('static', filename='images/local_heroes/sheela_gopal.jpg') }}">
 			<div class="local_hero_name">
@@ -305,38 +333,35 @@
 		    <div class="local_hero">
 			<img src="{{ url_for('static', filename='images/local_heroes/shankar.jpg') }}">
 			<div class="local_hero_name">
-			    Shankar
+			    Srinivas Jayashankar
 			</div>
 			<div class="local_hero_description">
 			</div>
 		    </div>
-
-		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
-			<div class="local_hero_name">
-			    Shashi Deshpande 
-			</div>
-			<div class="local_hero_description">
-			</div>
-		    </div>
-		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
-			<div class="local_hero_name">
-			    Sathya
-			</div>
-			<div class="local_hero_description">
-			</div>
-		    </div>
-		    <div class="local_hero">
-			<img src="{{ url_for('static', filename='images/local_heroes/man_placeholder.jpg') }}">
-			<div class="local_hero_name">
-			    Ramchandra Arkalgud
-			</div>
-			<div class="local_hero_description">
-			</div>
-		    </div>
-		</div>
                 </div>
+                <div id='local_heroes_subsection_title'>
+                    Kannada Koota Volunteer Heroes 
+                </div>
+                <div id='local_heroes_subsection_description'>
+                    A big shout out to all the volunteers who made this a successful event. Starting from Designing the Yard signs (Ajit & Keshav) to pooling nominations for the event, reaching out to each nominee to confirm availabletity (Shilpa & Kavya). Planning routes, estimating & scheduling volunteers, Lettering names of Heroes (Shiasha) on the signs. 
+                </div>
+		<table class="table" id="table_of_volunteer_heroes">
+		    <tr>
+			<th> Queens - Nassau </th>
+			<th> Nassau </th>
+			<th> Nassau - Suffolk </th>
+			<th> Brooklyn / Westchester </th>
+		    </tr>
+		{% for group_one_volunteer, group_two_volunteer, group_three_volunteer, group_four_volunteer in volunteers %}
+		    <tr>
+			<td> {{group_one_volunteer}} </td>
+			<td> {{group_two_volunteer}} </td>
+			<td> {{group_three_volunteer}} </td>
+			<td> {{group_four_volunteer}} </td>
+		    </tr>
+		{% endfor %}
+		</table>
+
             <div id="push"> </div>
         </div>
         <footer id="footer">

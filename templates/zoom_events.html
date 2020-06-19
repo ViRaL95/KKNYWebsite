@@ -13,7 +13,7 @@
     <body>
         <div id="content">
             {% include "navbar.html" %}
-                <div id="photo_gallery_events_title">
+                <div id="zoom_events_title">
 		    Zoom events
                 </div>
 		<div>
@@ -92,21 +92,12 @@
 			    </tbody>
 			</table>
 		</div>
-                    {% for previous_event in previous_events %}
-                      <div class="photo_gallery_event">
-                        <a href="{{ previous_event.flickr_url }}" target="_blank"> {{previous_event.event_name}} </a>
-                      </div>
-                    {% endfor %}
-		<div id="donate description">
-		    
-		</div>
-                <div id="youtube_link" style="font-family: 'Pathway gothic One';font-size: 23px;text-align: center; font-weight: bold; top: 20px; position: relative">
-                    KKNY is now on YouTube! Click <a href="https://www.youtube.com/channel/UCWj7v3qVe4Fxx2oSjTsO4kg"> here </a> to watch and subscribe to every new KKNY video. 
+		<div id="zoom_events_why_donate">	
+			Please thank the local and guest artistis who have put their time and effort into making all of thesee events possible by donating here <a href="/donate"> here </a>
                 </div>
 
-
-		<div id="why_donate_2">	
-			Please thank the local and guest artistis who have put their time and effort into making all of thesee events possible by donating here <a href="/donate"> here </a>
+                <div id="youtube_link" style="font-family: 'Pathway gothic One';font-size: 23px;text-align: center; font-weight: bold; top: 20px; position: relative">
+                    KKNY is now on YouTube! Click <a href="https://www.youtube.com/channel/UCWj7v3qVe4Fxx2oSjTsO4kg"> here </a> to watch and subscribe to every new KKNY video. 
                 </div>
 
 	        <div id="push"></div>

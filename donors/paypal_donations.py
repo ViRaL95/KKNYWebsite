@@ -1,6 +1,6 @@
 from SECRETS.secrets import PAYPAL_CLIENT_ID, PAYPAL_SECRET_KEY
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def retrieve_donors():
     authorization_request = \
@@ -13,8 +13,8 @@ def retrieve_donors():
     token = authorization_request.json()['access_token']
     ia_header = {"Authorization": "Bearer {}".format(token), "Content-Type": "application/json"}
 
-    start_date = datetime(2020, 5, 17)
     current_date  = datetime.now().date()
+    start_date = current_date - timedelta(30)
     start_date_str = datetime.strftime(start_date, '%Y-%m-%dT%H:%M:%SZ')
     current_date_str = datetime.strftime(current_date, '%Y-%m-%dT%H:%M:%SZ')
 
@@ -23,6 +23,7 @@ def retrieve_donors():
                                   "transaction_type": "T0013",
                                   "fields": "payer_info"})
 
+    print(answer.json())
     payment_info = {payer['payer_info']['payer_name']['alternate_full_name']: payer['transaction_info']['transaction_amount']['value']
                     for payer in answer.json()['transaction_details']}
 

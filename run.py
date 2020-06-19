@@ -74,12 +74,101 @@ def renderAllMembers():
                            fundraising_committee=fundraising_committee, sound_music_committee=sound_music_committee, decorations_committee=decorations_committee, sports_committee=sports_committee)
 
 
-@application.route('/localHeroes')
+@application.route('/local_heroes')
 def render_local_heros():
-    return render_template('local_heroes.html')
+    volunteer_group_one = [
+	'Kavya (Coordinator)',
+	'Keshav (Coordinator)',
+	'Radhika',
+	'Ravi',
+	'Geetha',
+	'Savitha Navada',
+	'Gopal Navada',
+	'Yeshoda',
+	'Prakash Bhat',
+	'Pranav Bhat',
+	'Pushpalatha Bhat',
+	'Danika',
+	'Vittal',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	''
+    ]
+    volunteer_group_two = [
+	'Nagini (Coordinator)',
+	'Uma Sharath (Coordinator)',
+	'Ravindra',
+	'Aditya',
+	'Sonika',
+	'Sharath Kengeri',
+	'Pragna',
+	'Gopal',
+	'Achala',
+	'Purushotam',
+	'Swaroop Kumble',
+	'Hamsini Kumble',
+	'Ojas',
+	'Arun Kumar',
+	'Geetha Kumar',
+	'Ankith kumar',
+	'Hrishikesh Deshpande',
+	'Vasumathi',
+        '',
+        '',
+        ''
+    ]
+    volunteer_group_three = [
+	'Ajit Ganesh (Co-ordinator)',
+	'Shilpa (Co-ordinator)',
+	'Ajith Shetty',
+	'Mahesh',
+	'Ram',
+	'Jyothi Babureddy',
+	'Babu Reddy',
+	'Veena',
+	'Subha',
+	'Anand',
+	'Chaitra',
+	'Sreeranjini',
+	'Arya',
+	'Ansh',
+	'Shivkumar',
+	'Ravindra Kudur',
+	'Narsi Motagan',
+	'Anitha',
+	'Ram Marakula',
+	'Sudha Marakula'
+    ]
+    volunteer_group_four = [
+	'Triveni  (Coordinator)',
+	'Raviteja  (Coordinator)',
+	'Badari Ambati (Coordinator)',
+	'Shreya Ambati',
+	'Vinaya',
+	'Aiysha',
+	'Ankush',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	''
+    ]
+    return render_template('local_heroes.html', volunteers=zip(volunteer_group_one, volunteer_group_two, volunteer_group_three, volunteer_group_four))
 
 
-@application.route("/presidentsMessage")
+@application.route("/presidents_message")
 def renderPresidentsMessage():
     session.pop('url', None)
     return render_template('presidents_message.html')
@@ -113,17 +202,14 @@ def upload_pic_page():
 @application.route("/upload_pics/<string:event_name>", methods=['POST'])
 @login_required
 def upload_pics(event_name):
-    print("entered upload pictures page")
     previous_events = PreviousEvents()
     event_info = previous_events.retrieve_event_info(event_name=event_name)
     upload_to_s3 = Photo_Send_s3()
     list_of_files = request.files.getlist("file[]")
-    print("yahuhhh")
     return json.dumps(upload_to_s3.send_photo_to_s3(list_of_files, {'email': current_user.email}, event_info))
 
 @application.errorhandler(413)
 def request_entity_too_large(error):
-    print("too large")
     return json.dumps({"message": "Please try to restrict the total size of all images to be less than 25 MB"}), 413, {'ContentType': 'application/json'}
 
 @application.route("/login_page")
@@ -193,35 +279,6 @@ def render_zoom_events():
 @application.route("/donate", methods=['GET'])
 def donate():
     donors = retrieve_donors()
-    """
-    authorization_request = \
-        requests.post("https://api.paypal.com/v1/oauth2/token", headers={"Accept": "application/json",
-                                                                        "Accept-Language": "en_US"},
-                     auth=("AZTjzrpOI3kszOnGUgX4jQVEF5qfaSbCXUERBsGMFT_QMn88ILsKTMLrmiH-d9dytpMtTPj0jOBl_ilS",
-                           "EFMJ9CNMPVSpGgeSDmU2FZlRNmum2fG9afp9KdDKe1Peqwkcmz7c9_OU-h3zZD9wP0vDij_p4fHQgZ7S"),
-                     data={"grant_type": "client_credentials"})
-
-    token = authorization_request.json()['access_token']
-    ia_header = {"Authorization": "Bearer {}".format(token), "Content-Type": "application/json"}
-
-    start_date = datetime(2020, 5, 17)
-    current_date  = datetime.now().date()
-    start_date_str = datetime.strftime(start_date, '%Y-%m-%dT%H:%M:%SZ')
-    current_date_str = datetime.strftime(current_date, '%Y-%m-%dT%H:%M:%SZ')
-
-    answer = requests.get("https://api.paypal.com/v1/reporting/transactions", headers=ia_header,
-                          params={"start_date": start_date_str, "end_date": current_date_str,
-                                  "transaction_type": "T0013",
-                                  "fields": "payer_info"})
-
-    payment_info = {payer['payer_info']['payer_name']['alternate_full_name']: payer['transaction_info']['transaction_amount']['value']
-                    for payer in answer.json()['transaction_details']}
-
-
-    payment_info_sorted = []
-    for user, amount in sorted(payment_info.items(), key=lambda item: float(item[1]), reverse=True):
-        payment_info_sorted.append(user)
-    """
     return render_template('donate.html', donors=donors)
 
 @application.route("/photo_gallery")

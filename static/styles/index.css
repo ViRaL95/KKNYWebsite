@@ -505,7 +505,6 @@ span.glyphicon.glyphicon-option-horizontal{
     display: none;
 }
 .committee{
-    margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -517,7 +516,6 @@ span.glyphicon.glyphicon-option-horizontal{
     position: relative;
     height: 350px;
     text-align: center;
-    left: 50px;
     color: black;
     width: 400px;
     margin-top: 40px;
@@ -550,12 +548,6 @@ span.glyphicon.glyphicon-option-horizontal{
     position: relative;
     top: 120px;
     padding-bottom: 20px;
-}
-
-.committee_title{
-    padding-top: 20px;
-    position: relative;
-    left: 60px;
 }
 
 #google_forms_sections{
@@ -597,9 +589,9 @@ span.glyphicon.glyphicon-option-horizontal{
 
 .container{
     text-align: center;
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 40px;
-    width: 1200px;
+    width: 100%;
     color : #333;
 }
 
@@ -644,6 +636,7 @@ span.glyphicon.glyphicon-option-horizontal{
 
 
 .tableContainer{
+    font-size: 19px;
     max-height:400px;
     min-height: 250px;
     overflow: auto;
@@ -653,6 +646,7 @@ span.glyphicon.glyphicon-option-horizontal{
 }
 
 .committee_title{
+    padding-top: 20px;
     text-align:center;
     font-weight: bold;
     font-size: 32px;
@@ -780,7 +774,7 @@ footer span{
 #previous_committee_section{
    position: relative;
    top: 100px;
-   height: 750px;
+   height: 1000px;
    border-top-color: #1d4971;
    border-top-style: dotted;
 }
@@ -898,15 +892,6 @@ footer span{
 
 }
 
-#why_donate_2{
-    font-family: 'Pathway Gothic One', sans-serif;
-    margin-bottom: 50px;
-    font-size: 23px;
-    top: 50px;
-    text-align: center;
-    position: relative;
-    background-color: white;
-}
 .footer_donate{
     position: relative;
     right: 20px;
@@ -1165,26 +1150,97 @@ input[type=submit]{
 }
 
 /* LOCAL HEROES */
+
 #local_hero_images img{
     height: 300px;
     width: 300px;
     padding: 5px;
 }
 
-#local_heroes{
+.local_heroes{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .local_hero{
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
 }
 
+.non_frontline_heroes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 #local_heroes_title{
+    font-family: 'Barlow Semi Condensed', sans-serif;
     text-align: center;
+    text-decoration: underline;
     font-weight: bold;
     font-size: 32px;
     padding-top: 20px;
+}
+
+#local_heroes_description{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+#local_heroes_subsection_title{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    padding-top: 20px;
+}
+
+#local_heroes_subsection_description{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    padding-top: 20px;
+}
+
+#table_of_volunteer_heroes{
+    margin-top: 100px;
+}
+
+#table_of_volunteer_heroes th{
+    text-align: unset;
+}
+
+
+/* ZOOM EVENTS */
+#zoom_events_why_donate{
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 50px;
+    font-size: 23px;
+    font-weight: bold;
+    top: 50px;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
+
+#youtube_link{
+    font-family: 'Pathway gothic One';
+    font-size: 23px;
+    text-align: center;
+    font-weight: bold;
+    top: 20px;
+    position: relative
+}
+
+#zoom_events_title {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
 }
