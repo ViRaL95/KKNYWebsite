@@ -11,6 +11,7 @@ import json
 import os
 import uuid
 import hashlib
+from AUTHENTICATION.sign_up import validate_signup
 from donors.paypal_donations import retrieve_donors
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -246,18 +247,7 @@ def signup_page():
 @application.route("/sign_up", methods=['POST'])
 def signup():
     sign_up_info = request.get_json()
-    for key, value in sign_up_info.items():
-        if value.strip() == "":
-            return json.dumps({"user_signed_up": False, "message": "There are missing fields"})
-    if sign_up_info['password'] != sign_up_info['repeat_password']:
-        return json.dumps({"user_signed_up": False, "message": "Passwords not matching"})
-    if len(sign_up_info['password']) > 35:
-        return json.dumps({"user_signed_up": False, "message": "Password must not be above 35 characters"})
-    if '@' not in sign_up_info["email"] or '.com' not in sign_up_info["email"]:
-        return json.dumps({"user_signed_up": False, "message": "Please enter only valid emails"})
-    check_if_user_already_exists = User.query.filter_by(email=sign_up_info['email']).first()
-    if check_if_user_already_exists:
-        return json.dumps({"user_signed_up": False, "message": "A user already exists with this email address"})
+    validate_signup(sign_up_info)
     first_name = sign_up_info["first_name"]
     last_name = sign_up_info["last_name"]
     gender = sign_up_info["gender"]
