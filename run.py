@@ -1,14 +1,9 @@
-from datetime import datetime
-import requests
-from pprint import pprint
 from API.newsConnection import NewsConnection
 from EMAIL import emailKKNYInfo
 from DATABASE.retrieve_event_for_photo_gallery import PreviousEvents 
 from DATABASE.renderMembers import CommitteeMembers
-from DATABASE.renderEvents import Events
 from AWS_S3_PHOTOS.send_image_to_bucket import Photo_Send_s3
 import json
-import os
 import uuid
 import hashlib
 from AUTHENTICATION.sign_up import validate_signup
