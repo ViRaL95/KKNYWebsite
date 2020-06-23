@@ -20,6 +20,7 @@ db = SQLAlchemy(application)
 login_manager = LoginManager()
 login_manager.init_app(application)
 
+
 class User (UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(30), unique=True)
@@ -28,31 +29,25 @@ class User (UserMixin, db.Model):
     last_name = db.Column(db.String(30))
     gender = db.Column(db.String(6))
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-"""
-HTML Files are in the templates directory
-homepage.html is rendered with news articles. The news articles are recieved from the newsConnection module in the API Package.
-"""
+
 @application.route("/")
 def start():
     session.pop('url', None)
     newsConnection = NewsConnection()
     return render_template('homepage.html', news_articles=newsConnection.retrieveNews())
-"""
-about.html is rendered. 
-"""
+
+
 @application.route("/about")
 def renderAboutUs():
     committeeMembers = CommitteeMembers()
     previous_committee = committeeMembers.retrievePreviousCommittee()
     return render_template('about.html', previous_committee=previous_committee);
 
-"""
-This method retrieves all members in our MongoDB Database. The module renderMembers in the DATABASE package retrieves all members in our different committees. These different committees are different collections in our MongoDB database.
-"""
 
 @application.route("/members")
 def renderAllMembers():
@@ -177,10 +172,12 @@ def sendEmail():
     session.pop('url', None)
     return "success"
 
+
 @application.route("/contact_us", methods=['GET'])
 def contact_us():
     session.pop('url', None)
     return render_template('contact_us_page.html')
+
 
 @application.route("/upload_pics_page")
 def upload_pic_page():
@@ -204,13 +201,16 @@ def upload_pics(event_name):
     list_of_files = request.files.getlist("file[]")
     return json.dumps(upload_to_s3.send_photo_to_s3(list_of_files, {'email': current_user.email}, event_info))
 
+
 @application.errorhandler(413)
 def request_entity_too_large(error):
     return json.dumps({"message": "Please try to restrict the total size of all images to be less than 25 MB"}), 413, {'ContentType': 'application/json'}
 
+
 @application.route("/login_page")
 def login_page():
     return render_template("login.html")
+
 
 @application.route("/login", methods=['POST'])
 def login():
@@ -239,6 +239,7 @@ def logout():
 def signup_page():
     return render_template("sign_up.html")
 
+
 @application.route("/sign_up", methods=['POST'])
 def signup():
     sign_up_info = request.get_json()
@@ -257,14 +258,17 @@ def signup():
     login_user(user)
     return json.dumps({"user_signed_up": True})
 
+
 @application.route('/zoom_events', methods=['GET'])
 def render_zoom_events():
     return render_template('zoom_events.html') 
   
+
 @application.route("/donate", methods=['GET'])
 def donate():
     donors = retrieve_donors()
     return render_template('donate.html', donors=donors)
+
 
 @application.route("/photo_gallery")
 def render_all_photo_events():
@@ -276,6 +280,7 @@ def render_all_photo_events():
     else:
         session['url'] = '/photo_gallery'
         return redirect(url_for("login_page"))
+
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
