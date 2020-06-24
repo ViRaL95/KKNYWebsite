@@ -2,37 +2,61 @@ from API.newsConnection import NewsConnection
 from EMAIL import emailKKNYInfo
 from DATABASE.retrieve_event_for_photo_gallery import PreviousEvents 
 from DATABASE.renderMembers import CommitteeMembers
+from AUTHENTICATION.authenticator import validate_and_login_user, Signup, Login
 from AWS_S3_PHOTOS.send_image_to_bucket import Photo_Send_s3
 import json
-import uuid
-import hashlib
-from AUTHENTICATION.sign_up import validate_signup
 from donors.paypal_donations import retrieve_donors
 from flask import Flask, url_for, render_template, request, redirect, session
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
-from flask_sqlalchemy import SQLAlchemy
+from flask_login import logout_user, login_required, current_user
+from exceptions import SignUpException, LoginException
 
 application = Flask(__name__)
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////database/users.db'
 application.config['SECRET_KEY'] = 'kkny_secrets'
-application.config['MAX_CONTENT_LENGTH'] = 25 * 1024 * 1024
-db = SQLAlchemy(application)
-login_manager = LoginManager()
-login_manager.init_app(application)
 
 
-class User (UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(30), unique=True)
-    password= db.Column(db.String(35))
-    first_name = db.Column(db.String(30))
-    last_name = db.Column(db.String(30))
-    gender = db.Column(db.String(6))
+@application.route('/login', methods=['POST'])
+def login_user():
+    login = Login(request.get_json())
+
+    try:
+        login.validate_login()
+        login.login_user()
+
+    except LoginException as e:
+        return json.dumps({
+            'successful_login': False,
+            'message': str(e)
+        })
+
+    login_response = {
+        'successful_login': True
+    }
+
+    if 'url' in session:
+        login_response.update(redirect_to=session['url'])
+
+    return json.dumps(login_response)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+@application.route("/sign_up", methods=['POST'])
+def signup_user():
+
+    sign_up = Signup(request.get_json())
+
+    try:
+        sign_up.validate_signup()
+        sign_up.signup_user()
+
+    except SignUpException as e:
+        return json.dumps({
+            'successful_signup': False,
+            'message': str(e)
+        })
+
+    return json.dumps({
+        'successful_signup': True,
+    })
 
 
 @application.route("/")
@@ -212,23 +236,6 @@ def login_page():
     return render_template("login.html")
 
 
-@application.route("/login", methods=['POST'])
-def login():
-    user_info = request.get_json()
-    email = user_info["email"]
-    password = user_info["password"]
-    user = User.query.filter_by(email=email).first()
-    if not user:
-        return json.dumps({"user_exists": False})
-    hashed_password, salt = user.password.split(":")
-    if hashed_password == hashlib.sha256(salt.encode() + password.encode()).hexdigest():
-        if 'url' in session:
-            login_user(user)
-            return json.dumps({"user_exists": True, "redirect_to": session['url']})
-        login_user(user)
-        return json.dumps({"user_exists": True})
-        
-
 @application.route("/logout")
 @login_required
 def logout():
@@ -238,26 +245,6 @@ def logout():
 @application.route("/sign_up_page")
 def signup_page():
     return render_template("sign_up.html")
-
-
-@application.route("/sign_up", methods=['POST'])
-def signup():
-    sign_up_info = request.get_json()
-    validate_signup(sign_up_info)
-    first_name = sign_up_info["first_name"]
-    last_name = sign_up_info["last_name"]
-    gender = sign_up_info["gender"]
-    email = sign_up_info["email"]
-    password = sign_up_info["password"]
-    repeat_password = sign_up_info["repeat_password"]
-    salt = uuid.uuid4().hex
-    hashed_password = hashlib.sha256(salt.encode() + password.encode()).hexdigest() + ":" + salt
-    user = User(email=email, password=hashed_password, first_name=first_name, last_name=last_name, gender=gender)
-    db.session.add(user)
-    db.session.commit()
-    login_user(user)
-    return json.dumps({"user_signed_up": True})
-
 
 @application.route('/zoom_events', methods=['GET'])
 def render_zoom_events():
